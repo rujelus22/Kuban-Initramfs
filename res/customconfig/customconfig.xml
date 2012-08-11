@@ -1,0 +1,146 @@
+<settingsRoot>
+  <settingsTab name="CPU">
+	<settingsPane description=""
+		name="CPU Scaling Settings">
+      <spinner description="This will set the default CPU governor. Default CPU governor will only be set during early stages of booting (before init.d execution) and can be overriden by later scripts or apps." name="Default CPU Governor" action="generic /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor">
+	    <spinnerItem name="hyper" value="hyper"/>
+		<spinnerItem name="Sakuractive" value="sakuractive"/> 
+		<spinnerItem name="Abyssplug" value="abyssplug"/> 
+		<spinnerItem name="Wheatley" value="wheatley"/> 
+		<spinnerItem name="HotPlug" value="hotplug"/> 
+		<spinnerItem name="Scary" value="Scary"/> 
+		<spinnerItem name="Lulzactive" value="lulzactive"/> 
+		<spinnerItem name="Skywalker" value="skywalker"/> 
+		<spinnerItem name="Brazilianwax" value="brazilianwax"/> 
+		<spinnerItem name="SavagedZen" value="SavagedZen"/> 
+		<spinnerItem name="LagFree" value="lagfree"/> 
+		<spinnerItem name="SmartassV2" value="smartassV2"/> 
+		<spinnerItem name="Lazy" value="lazy"/> 
+        <spinnerItem name="Pegasusq" value="pegasusq"/> 
+		<spinnerItem name="Interactive" value="interactive"/>
+		<spinnerItem name="InteractiveX" value="Interactivex"/>  
+        <spinnerItem name="Conservative" value="conservative"/> 
+		<spinnerItem name="Ondemand" value="ondemand"/>
+		<spinnerItem name="OndemandX" value="ondemandx"/>
+		<spinnerItem name="Intellidemand" value="Intellidemand"/>
+		<spinnerItem name="Lionheart" value="Lionheart"/>			 
+		<spinnerItem name="Powersave" value="powersave"/>
+		<spinnerItem name="Performance" value="performance"/>
+      </spinner>
+      <seekBar description="Scaling maximum frequency (Samsung Default: 1200)"
+                name="Scaling Max Freq" action="generic /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq" unit=" Mhz" min="200000" reversed="false" step="100000" max="1600000"/>
+      <seekBar description="Scaling minimum frequency (Samsung Default: 200)"
+                name="Scaling Min Freq" action="generic /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq" unit=" Mhz" min="200000" reversed="false" step="100000" max="1600000"/>
+	  <spinner description="This setting will change CPU step count (Restart required)." name="CPU Step Count" action="generic /tmp/cpustepcount">
+             <spinnerItem name="5 (200-500-800-1000-1200MHz)" value="5"/> 
+             <spinnerItem name="6 (5-steps + 1400MHz)" value="6"/> 
+             <spinnerItem name="7 (6-steps + 1500MHz)" value="7"/> 
+             <spinnerItem name="8 (6-steps + 100MHz + 1600MHz)" value="8"/> 
+             <spinnerItem name="9 (8-step + 1500MHz)" value="9"/> 
+             <spinnerItem name="18 (All available)" value="18"/> 
+      </spinner>
+	</settingsPane>
+	<settingsPane description=""
+		name="CPU Undervolting">
+      <spinner description="Sets the CPU undervolting value which will be applied during boot time only. It will not have any effect until you restart your device. Remember: if you change this value and your device doesn't boot you will have to reset extweaks settings using CWM recovery. This value will be applied to all CPU steps before any script or app execution. If you use any script or voltage control app this setting may be overriden by those." name="CPU Undervolting" action="generic /tmp/cpu_undervolting">
+             <spinnerItem name="No Undervolting" value="0"/> 
+             <spinnerItem name=" -25 mV" value="-25"/> 
+             <spinnerItem name=" -50 mV" value="-50"/> 
+             <spinnerItem name=" -75 mV" value="-75"/> 
+             <spinnerItem name="-100 mV" value="-100"/> 
+      </spinner>
+    </settingsPane>
+    <settingsPane description="" 
+		name="CPU Idle and Power Settings">
+      <spinner description="Sets the CPU Idle Mode. AFTR+LPA is the default and best for the battery life but if you have problems try Idle+LPA." name="CPU Idle Mode" action="generic /sys/module/cpuidle_exynos4/parameters/enable_mask">
+        <spinnerItem name="AFTR + LPA (default)" value="3"/> 
+        <spinnerItem name="Idle + LPA" value="2"/> 
+        <spinnerItem name="AFTR only" value="1"/> 
+        <spinnerItem name="Idle only" value="0"/> 
+      </spinner>
+	</settingsPane>
+  </settingsTab>
+  <settingsTab name="Kernel">
+    <settingsPane description="Kernel Settings" name="Kernel Settings">
+      <seekBar description="Hung Task Timeout in Seconds (Samsung Default: 0)(Kuban Default: 30)"
+                name="Hung Task Timeout" action="generic /proc/sys/kernel/hung_task_timeout_secs" unit=" " min="0" reversed="false" step="1" max="60"/>
+	  <seekBar description="If this is zero, the kernel will loop on a panic; if non-zero it indicates that the kernel should autoreboot after this number of seconds. (Samsung Default: 1)(Kuban Default: 30)"
+                name="Kernel Panic" action="generic /proc/sys/kernel/panic" unit=" " min="0" reversed="false" step="1" max="60"/>
+	  <seekBar description="The number of read bits required for waking up processes that sleep (Samsung Default: 64)(Kuban Default: 256)"
+                name="Read Wakeup Threshold" action="generic /proc/sys/kernel/random/read_wakeup_threshold" unit=" " min="32" reversed="false" step="32" max="1024"/>
+	  <seekBar description="The number of write bits required for waking up processes that sleep (Samsung Default: 128)(Kuban Default: 256)"
+                name="Write Wakeup Threshold" action="generic /proc/sys/kernel/random/write_wakeup_threshold" unit=" " min="32" reversed="false" step="32" max="1024"/>
+    </settingsPane>
+  </settingsTab>
+  <settingsTab name="I/O and USB">
+    <settingsPane description="I/O and USB Settings" name="I/O and USB Settings">
+      <spinner description="This will set the default I/O scheduler. Default I/O scheduler will only be set during early stages of booting (before init.d execution) and can be overriden by later scripts or apps." name="Default I/O Scheduler" action="generic /sys/block/mmcblk0/queue/scheduler">
+        <spinnerItem name="sio" value="sio"/> 
+        <spinnerItem name="noop" value="noop"/> 
+        <spinnerItem name="deadline" value="deadline"/> 
+        <spinnerItem name="vr" value="vr"/> 
+        <spinnerItem name="cfq" value="cfq"/> 
+      </spinner>
+	 <spinner description="SD Read Ahead (Samsung Default: 256)(Kuban Default: 4096)" name="SD Read Ahead" action="readahead">
+             <spinnerItem name="4096" value="4096"/> 
+             <spinnerItem name="3072" value="3072"/> 
+             <spinnerItem name="2048" value="2048"/> 
+			 <spinnerItem name="1024" value="1024"/>
+			 <spinnerItem name="512" value="512"/>
+			 <spinnerItem name="256" value="256"/>
+			 <spinnerItem name="128" value="128"/>
+      </spinner>
+      <spinner description="Change USB connection mode. Either leave it as default or force it to mass storage mode (you will see your sdcards as disks) or mtp" name="USB Mass Storage Mode" action="usb-mode">
+        <spinnerItem name="Default" value="default"/> 
+        <spinnerItem name="Force Mass Storage Mode" value="mass_storage-adb"/> 
+        <spinnerItem name="Force MTP Mode" value="mtp-adb"/> 
+      </spinner>
+    </settingsPane>
+  </settingsTab>
+  <settingsTab name="Memory">
+    <settingsPane  description="As you write out data ultimately intended for disk, Linux caches this information in an area of memory called the page cache. Tweak how these settings work" name="Memory Settings">
+	<seekBar description="VFS Cache Pressure (Samsung Default: 100)(Kuban Default: 10)"
+                name="VFS Cache Pressure" action="generic /proc/sys/vm/vfs_cache_pressure" unit=" " min="0" reversed="false" step="10" max="100"/>
+	<seekBar description=" Maximum percentage of active that can be filled with dirty pages before pdflush begins to write them (Samsung Default: 0)(Kuban Default: 5)"
+                name="Dirty Background Ratio" action="generic /proc/sys/vm/dirty_background_ratio" unit=" " min="0" reversed="false" step="5" max="100"/>
+	<seekBar description="In hundredths of a second, how long data can be in the page cache before it's considered expired and must be written at the next opportunity (Samsung Default: 200)(Kuban Default: 1000)"
+                name="Dirty Expire Centisecs" action="generic /proc/sys/vm/dirty_expire_centisecs" unit=" " min="0" reversed="false" step="100" max="2000"/>
+	<seekBar description="Maximum percentage of total memory that can be filled with dirty pages before processes are forced to write dirty buffers themselves during their time slice instead of being allowed to do more writes (Samsung Default: 20)(Kuban Default: 90)"
+                name="Dirty Ratio" action="generic /proc/sys/vm/dirty_ratio" unit=" " min="0" reversed="false" step="10" max="100"/>
+	<seekBar description="In hundredths of a second, this is how often pdflush wakes up to write data to disk (Samsung Default: 500)(Kuban Default: 2000)"
+                name="Dirty Writeback Centisecs" action="generic /proc/sys/vm/dirty_writeback_centisecs" unit=" " min="0" reversed="false" step="100" max="2000"/>
+	<seekBar description="A swappiness setting of zero means that the disk will be avoided unless absolutely necessary (you run out of memory), while a swappiness setting of 100 means that programs will be swapped to disk almost instantly (Samsung Default: 0)(Kuban Default: 50)"
+                name="Swappiness" action="generic /proc/sys/vm/swappiness" unit=" " min="0" reversed="false" step="10" max="100"/>
+    </settingsPane>
+  </settingsTab>
+  <settingsTab name="Network">
+    <settingsPane description="Network and WIFI Settings" name="Network and WIFI Settings">
+      <seekBar description="TCP Keep Alive Time (Samsung Default: 7200)(Kuban Default: 1800)"
+                name="TCP Keep Alive Time" action="generic /proc/sys/net/ipv4/tcp_keepalive_time" unit="ms" min="1800" reversed="false" step="100" max="7200"/>
+	  <seekBar description="The tcp_keepalive_probes variable tells the kernel how many TCP keepalive probes to sendout before it decides a specific connection is broken. (Samsung Default: 9)(Kuban Default: 5)"
+                name="TCP Keep Alive Probes" action="generic /proc/sys/net/ipv4/tcp_keepalive_probes" unit="" min="0" reversed="false" step="1" max="50"/>
+	  <seekBar description="The tcp_keepalive_intvl variable tells the kernel how long to wait for a reply on each keep alive probe. (Samsung Default: 72)(Kuban Default: 20)"
+                name="TCP Keep Alive Intvl" action="generic /proc/sys/net/ipv4/tcp_keepalive_intvl" unit="" min="5" reversed="false" step="5" max="100"/>
+	  <spinner description="The tcp_timestamps variable tells the kernel to use timestamps as de?ned in RFC 1323. Inshort, this is an TCP option that can be used to calculate the Round Trip Measurement in abetter way than the retransmission timeout method can (Samsung Default: On)(Kuban Default: Off)" name="TCP Timestamps" action="generic /proc/sys/net/ipv4/tcp_timestamps">
+        <spinnerItem name="On" value="1"/> 
+        <spinnerItem name="Off" value="0"/> 
+      </spinner>
+	  <spinner description="This variable enables the fast recycling function of TIME-WAIT sockets (Samsung Default: Off)(Kuban Default: On)" name="TCP Recycle" action="generic /proc/sys/net/ipv4/tcp_tw_recycle">
+        <spinnerItem name="On" value="1"/> 
+        <spinnerItem name="Off" value="0"/> 
+      </spinner>
+	  <spinner description="If this value is set to On, the kernel chooses to totally ignore all ICMP Echo requests (Samsung Default: Off)(Kuban Default: On)" name="ICMP Echo Ignore All" action="generic /proc/sys/net/ipv4/icmp_echo_ignore_all">
+        <spinnerItem name="On" value="1"/> 
+        <spinnerItem name="Off" value="0"/> 
+      </spinner>
+	  <seekBar description="The tcp_max_syn_backlog variable tells your box how many SYN requests to keep in memory. (Samsung Default: 512)(Kuban Default: 4096)"
+                name="TCP Max SYN Backlog" action="generic /proc/sys/net/ipv4/tcp_max_syn_backlog" unit="" min="128" reversed="false" step="128" max="4096"/>
+    </settingsPane>
+  </settingsTab>
+  <settingsTab name="Misc">
+    <settingsPane description="Screen Settings" name="Screen Settings">
+	  <seekBar description="Touch Sensitivity Lower value = higher sensitivity (Samsung Default: 40)(Kuban Default: 0)"
+                name="Touch Sensitivity" action="generic /sys/devices/virtual/sec/sec_touchscreen/tsp_threshold" unit="" min="0" reversed="false" step="10" max="80"/>
+	</settingsPane>
+  </settingsTab>
+</settingsRoot>
