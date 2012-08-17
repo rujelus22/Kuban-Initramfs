@@ -51,4 +51,3 @@ esac;
 
 #usb mode
 /res/customconfig/actions/usb-mode ${usb_mode}
-

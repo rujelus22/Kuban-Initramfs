@@ -947,12 +947,12 @@ service samsungani /system/bin/samsungani
     oneshot
 
 #for samsung boot sound
-service playsound /system/bin/playsound
-	class main
-	user media
-	group system
-	disabled
-	oneshot
+#service playsound /system/bin/playsound
+#	class main
+#	user media
+#	group system
+#	disabled
+#	oneshot
 #for samsung boot sound
 
 service dbus /system/bin/dbus-daemon --system --nofork
@@ -1073,8 +1073,14 @@ service bugreport /system/bin/bugmailer.sh -v
 	oneshot
 	keycodes 114 115 116
 
+# EX_Profiles Support
+service exprofiles /sbin/ext/4exprofiles.sh
+    	class main
+    	user root
+    	oneshot
+
+# Enable ExTweaks Settings at startup
 service postinit /sbin/ext/post-init.sh
 	class core
 	user root
 	oneshot
-

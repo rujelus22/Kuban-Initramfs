@@ -1,6 +1,18 @@
+supplicant_scan_interval=180
 scaling_governor=hyper
 scaling_max_freq=1200000
 scaling_min_freq=200000
+enabled=0
+scaling_governor_sleep=hyper
+scaling_max_freq_sleep=800000
+scaling_min_freq_sleep=25000
+lowbatt=30
+scaling_governor_batt=hyper
+scaling_max_freq_batt=800000
+scaling_min_freq_batt=100000
+scaling_governor_charging=hyper
+scaling_max_freq_charging=1200000
+scaling_min_freq_charging=200000
 enable_mask=3
 scheduler=sio
 usb_mode=default
@@ -25,3 +37,4 @@ tcp_keepalive_intvl=20
 icmp_echo_ignore_all=1
 tcp_max_syn_backlog=4096
 tsp_threshold=0
+
