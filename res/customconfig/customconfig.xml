@@ -1,495 +1,437 @@
 <settingsRoot>
-  <settingsTab name="CPU">
-	<settingsPane description=""
-		name="CPU Scaling Settings">
-      <spinner description="This will set the default CPU governor. Default CPU governor will only be set during early stages of booting (before init.d execution) and can be overriden by later scripts or apps." name="Default CPU Governor" action="generic /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor">
-	    <spinnerItem name="hyper" value="hyper"/>
-		<spinnerItem name="Sakuractive" value="sakuractive"/> 
-		<spinnerItem name="Abyssplug" value="abyssplug"/> 
-		<spinnerItem name="Wheatley" value="wheatley"/> 
-		<spinnerItem name="HotPlug" value="hotplug"/> 
-		<spinnerItem name="Scary" value="Scary"/> 
-		<spinnerItem name="Lulzactive" value="lulzactive"/> 
-		<spinnerItem name="Skywalker" value="skywalker"/> 
-		<spinnerItem name="Brazilianwax" value="brazilianwax"/> 
-		<spinnerItem name="SavagedZen" value="SavagedZen"/> 
-		<spinnerItem name="LagFree" value="lagfree"/> 
-		<spinnerItem name="SmartassV2" value="smartassV2"/> 
-		<spinnerItem name="Lazy" value="lazy"/> 
-          	<spinnerItem name="Pegasusq" value="pegasusq"/> 
-		<spinnerItem name="Interactive" value="interactive"/>
-		<spinnerItem name="InteractiveX" value="Interactivex"/>  
-          	<spinnerItem name="Conservative" value="conservative"/> 
-		<spinnerItem name="Ondemand" value="ondemand"/>
-		<spinnerItem name="OndemandX" value="ondemandx"/>
-		<spinnerItem name="Intellidemand" value="Intellidemand"/>
-		<spinnerItem name="Lionheart" value="Lionheart"/>			 
-		<spinnerItem name="Powersave" value="powersave"/>
-		<spinnerItem name="Performance" value="performance"/>
-	  </spinner>
-	  <spinner description="Scaling maximum frequency (Default: 1.2Ghz)" name="Scaling Max Freq" action="generic /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq">
-             <spinnerItem name="1.6Ghz" value="1600000"/> 
-             <spinnerItem name="1.5Ghz" value="1500000"/> 
-             <spinnerItem name="1.4Ghz" value="1400000"/> 
-             <spinnerItem name="1.3Ghz" value="1300000"/> 
-             <spinnerItem name="1.2Ghz" value="1200000"/>
-	     <spinnerItem name="1.1Ghz" value="1100000"/> 
-             <spinnerItem name="1.0Ghz" value="1000000"/> 
-             <spinnerItem name="900Mhz" value="900000"/> 
-             <spinnerItem name="800Mhz" value="800000"/> 
-             <spinnerItem name="700Mhz" value="700000"/>
-	     <spinnerItem name="600Mhz" value="600000"/> 
-             <spinnerItem name="500Mhz" value="500000"/> 
-             <spinnerItem name="400Mhz" value="400000"/> 
-             <spinnerItem name="300Mhz" value="300000"/> 
-             <spinnerItem name="200Mhz" value="200000"/>
-	     <spinnerItem name="100Mhz" value="100000"/> 
-	     <spinnerItem name="50Mhz" value="50000"/>
-	     <spinnerItem name="25Mhz" value="25000"/>  
-	  </spinner>
-	  <spinner description="Scaling minimum frequency (Default: 200Mhz)" name="Scaling Min Freq" action="generic /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq">
-             <spinnerItem name="1.6Ghz" value="1600000"/> 
-             <spinnerItem name="1.5Ghz" value="1500000"/> 
-             <spinnerItem name="1.4Ghz" value="1400000"/> 
-             <spinnerItem name="1.3Ghz" value="1300000"/> 
-             <spinnerItem name="1.2Ghz" value="1200000"/>
-	     <spinnerItem name="1.1Ghz" value="1100000"/> 
-             <spinnerItem name="1.0Ghz" value="1000000"/> 
-             <spinnerItem name="900Mhz" value="900000"/> 
-             <spinnerItem name="800Mhz" value="800000"/> 
-             <spinnerItem name="700Mhz" value="700000"/>
-	     <spinnerItem name="600Mhz" value="600000"/> 
-             <spinnerItem name="500Mhz" value="500000"/> 
-             <spinnerItem name="400Mhz" value="400000"/> 
-             <spinnerItem name="300Mhz" value="300000"/> 
-             <spinnerItem name="200Mhz" value="200000"/>
-	     <spinnerItem name="100Mhz" value="100000"/> 
-	     <spinnerItem name="50Mhz" value="50000"/>
-	     <spinnerItem name="25Mhz" value="25000"/>  
-	  </spinner>
-	  <spinner description="This setting will change CPU step count (Restart required)." name="CPU Step Count" action="generic /tmp/cpustepcount">
-             <spinnerItem name="5 (200-500-800-1000-1200MHz)" value="5"/> 
-             <spinnerItem name="6 (5-steps + 1400MHz)" value="6"/> 
-             <spinnerItem name="7 (6-steps + 1500MHz)" value="7"/> 
-             <spinnerItem name="8 (6-steps + 100MHz + 1600MHz)" value="8"/> 
-             <spinnerItem name="9 (8-step + 1500MHz)" value="9"/> 
-             <spinnerItem name="18 (All available)" value="18"/> 
-      </spinner>
-	</settingsPane>
-	<settingsPane description=""
-		name="CPU Undervolting">
-      <spinner description="Sets the CPU undervolting value which will be applied during boot time only. It will not have any effect until you restart your device. Remember: if you change this value and your device doesn't boot you will have to reset extweaks settings using CWM recovery. This value will be applied to all CPU steps before any script or app execution. If you use any script or voltage control app this setting may be overriden by those." name="CPU Undervolting" action="generic /tmp/cpu_undervolting">
-             <spinnerItem name="No Undervolting" value="0"/> 
-             <spinnerItem name=" -25 mV" value="-25"/> 
-             <spinnerItem name=" -50 mV" value="-50"/> 
-             <spinnerItem name=" -75 mV" value="-75"/> 
-             <spinnerItem name="-100 mV" value="-100"/> 
-      </spinner>
-    </settingsPane>
-    <settingsPane description="" 
-		name="CPU Idle and Power Settings">
-      <spinner description="Sets the CPU Idle Mode. AFTR+LPA is the default and best for the battery life but if you have problems try Idle+LPA." name="CPU Idle Mode" action="generic /sys/module/cpuidle_exynos4/parameters/enable_mask">
-        <spinnerItem name="AFTR + LPA (default)" value="3"/> 
-        <spinnerItem name="Idle + LPA" value="2"/> 
-        <spinnerItem name="AFTR only" value="1"/> 
-        <spinnerItem name="Idle only" value="0"/> 
-      </spinner>
-	</settingsPane>
-  </settingsTab>
-  <settingsTab name="Profiles"> 
-	<settingsPane description="Turn Profiles On or Off" name="Toggle Profiles">
-		<spinner description="This will enable or disable profiles. When profiles are enabled, all fields below will be applied." name="Enable Profiles" action="enabled">
-             		<spinnerItem name="Off" value="0"/> 
-             		<spinnerItem name="On" value="1"/>
-      		</spinner>
-	</settingsPane>
-	<settingsPane description="Set all of the screen off profile options. These only apply when the sceen is turned off (Screen Off Has the highest Priority)" name="Screen Off Settings">		
-		<spinner description="This will set the Screen Off CPU governor." name="Screen Off CPU Governor" action="scaling_governor_sleep">
-	    		<spinnerItem name="hyper" value="hyper"/>
-			<spinnerItem name="Sakuractive" value="sakuractive"/> 
-			<spinnerItem name="Abyssplug" value="abyssplug"/> 
-			<spinnerItem name="Wheatley" value="wheatley"/> 
-			<spinnerItem name="HotPlug" value="hotplug"/> 
-			<spinnerItem name="Scary" value="Scary"/> 
-			<spinnerItem name="Lulzactive" value="lulzactive"/> 
-			<spinnerItem name="Skywalker" value="skywalker"/> 
-			<spinnerItem name="Brazilianwax" value="brazilianwax"/> 
-			<spinnerItem name="SavagedZen" value="SavagedZen"/> 
-			<spinnerItem name="LagFree" value="lagfree"/> 
-			<spinnerItem name="SmartassV2" value="smartassV2"/> 
-			<spinnerItem name="Lazy" value="lazy"/> 
-          		<spinnerItem name="Pegasusq" value="pegasusq"/> 
-			<spinnerItem name="Interactive" value="interactive"/>
-			<spinnerItem name="InteractiveX" value="Interactivex"/>  
-          		<spinnerItem name="Conservative" value="conservative"/> 
-			<spinnerItem name="Ondemand" value="ondemand"/>
-			<spinnerItem name="OndemandX" value="ondemandx"/>
-			<spinnerItem name="Intellidemand" value="Intellidemand"/>
-			<spinnerItem name="Lionheart" value="Lionheart"/>			 
-			<spinnerItem name="Powersave" value="powersave"/>
-			<spinnerItem name="Performance" value="performance"/>
-	  	</spinner>
-		<spinner description="The maximum frequency allowed when the screen is off" name="Screen Off Scaling Max Freq" action="scaling_max_freq_sleep">
-             		<spinnerItem name="1.6Ghz" value="1600000"/> 
-             		<spinnerItem name="1.5Ghz" value="1500000"/> 
-             		<spinnerItem name="1.4Ghz" value="1400000"/> 
-             		<spinnerItem name="1.3Ghz" value="1300000"/> 
-             		<spinnerItem name="1.2Ghz" value="1200000"/>
-	 		<spinnerItem name="1.1Ghz" value="1100000"/> 
-          		<spinnerItem name="1.0Ghz" value="1000000"/> 
-         		<spinnerItem name="900Mhz" value="900000"/> 
-         		<spinnerItem name="800Mhz" value="800000"/> 
-           		<spinnerItem name="700Mhz" value="700000"/>
-	   		<spinnerItem name="600Mhz" value="600000"/> 
-           		<spinnerItem name="500Mhz" value="500000"/> 
-            		<spinnerItem name="400Mhz" value="400000"/> 
-            		<spinnerItem name="300Mhz" value="300000"/> 
-            		<spinnerItem name="200Mhz" value="200000"/>
-	     		<spinnerItem name="100Mhz" value="100000"/> 
-	     		<spinnerItem name="50Mhz" value="50000"/>
-	    		<spinnerItem name="25Mhz" value="25000"/>  
-	 	 </spinner>
-	  	<spinner description="The minimum frequency allowed when the screen is off" name="Screen Off Scaling Min Freq" action="scaling_min_freq_sleep">
-             		<spinnerItem name="1.6Ghz" value="1600000"/> 
-             		<spinnerItem name="1.5Ghz" value="1500000"/> 
-		        <spinnerItem name="1.4Ghz" value="1400000"/> 
-             		<spinnerItem name="1.3Ghz" value="1300000"/> 
-             		<spinnerItem name="1.2Ghz" value="1200000"/>
-	     		<spinnerItem name="1.1Ghz" value="1100000"/> 
-             		<spinnerItem name="1.0Ghz" value="1000000"/> 
-             		<spinnerItem name="900Mhz" value="900000"/> 
-             		<spinnerItem name="800Mhz" value="800000"/> 
-             		<spinnerItem name="700Mhz" value="700000"/>
-	     		<spinnerItem name="600Mhz" value="600000"/> 
-             		<spinnerItem name="500Mhz" value="500000"/> 
-             		<spinnerItem name="400Mhz" value="400000"/> 
-             		<spinnerItem name="300Mhz" value="300000"/> 
-             		<spinnerItem name="200Mhz" value="200000"/>
-	     		<spinnerItem name="100Mhz" value="100000"/> 
-	     		<spinnerItem name="50Mhz" value="50000"/>
-	     		<spinnerItem name="25Mhz" value="25000"/>  
-	  	</spinner>
-    </settingsPane>
-    <settingsPane description="This will Set the options below while the screen is on and the phone is charging (Will Override the low power profile)" name="Charging Settings">
-		<spinner description="This will set the charging CPU governor." name="Charging CPU Governor" action="scaling_governor_charging">
-	    		<spinnerItem name="hyper" value="hyper"/>
-			<spinnerItem name="Sakuractive" value="sakuractive"/> 
-			<spinnerItem name="Abyssplug" value="abyssplug"/> 
-			<spinnerItem name="Wheatley" value="wheatley"/> 
-			<spinnerItem name="HotPlug" value="hotplug"/> 
-			<spinnerItem name="Scary" value="Scary"/> 
-			<spinnerItem name="Lulzactive" value="lulzactive"/> 
-			<spinnerItem name="Skywalker" value="skywalker"/> 
-			<spinnerItem name="Brazilianwax" value="brazilianwax"/> 
-			<spinnerItem name="SavagedZen" value="SavagedZen"/> 
-			<spinnerItem name="LagFree" value="lagfree"/> 
-			<spinnerItem name="SmartassV2" value="smartassV2"/> 
-			<spinnerItem name="Lazy" value="lazy"/> 
-          		<spinnerItem name="Pegasusq" value="pegasusq"/> 
-			<spinnerItem name="Interactive" value="interactive"/>
-			<spinnerItem name="InteractiveX" value="Interactivex"/>  
-          		<spinnerItem name="Conservative" value="conservative"/> 
-			<spinnerItem name="Ondemand" value="ondemand"/>
-			<spinnerItem name="OndemandX" value="ondemandx"/>
-			<spinnerItem name="Intellidemand" value="Intellidemand"/>
-			<spinnerItem name="Lionheart" value="Lionheart"/>			 
-			<spinnerItem name="Powersave" value="powersave"/>
-			<spinnerItem name="Performance" value="performance"/>
-	  	</spinner>
-		<spinner description="The maximum frequency allowed when charging" name="Charging Scaling Max Freq" action="scaling_max_freq_charging">
-             		<spinnerItem name="1.6Ghz" value="1600000"/> 
-             		<spinnerItem name="1.5Ghz" value="1500000"/> 
-             		<spinnerItem name="1.4Ghz" value="1400000"/> 
-             		<spinnerItem name="1.3Ghz" value="1300000"/> 
-             		<spinnerItem name="1.2Ghz" value="1200000"/>
-	 		<spinnerItem name="1.1Ghz" value="1100000"/> 
-          		<spinnerItem name="1.0Ghz" value="1000000"/> 
-         		<spinnerItem name="900Mhz" value="900000"/> 
-         		<spinnerItem name="800Mhz" value="800000"/> 
-           		<spinnerItem name="700Mhz" value="700000"/>
-	   		<spinnerItem name="600Mhz" value="600000"/> 
-           		<spinnerItem name="500Mhz" value="500000"/> 
-            		<spinnerItem name="400Mhz" value="400000"/> 
-            		<spinnerItem name="300Mhz" value="300000"/> 
-            		<spinnerItem name="200Mhz" value="200000"/>
-	     		<spinnerItem name="100Mhz" value="100000"/> 
-	     		<spinnerItem name="50Mhz" value="50000"/>
-	    		<spinnerItem name="25Mhz" value="25000"/>  
-	 	 </spinner>
-	  	<spinner description="The minimum frequency allowed when charging" name="charging Scaling Min Freq" action="scaling_min_freq_charging">
-             		<spinnerItem name="1.6Ghz" value="1600000"/> 
-             		<spinnerItem name="1.5Ghz" value="1500000"/> 
-		        <spinnerItem name="1.4Ghz" value="1400000"/> 
-             		<spinnerItem name="1.3Ghz" value="1300000"/> 
-             		<spinnerItem name="1.2Ghz" value="1200000"/>
-	     		<spinnerItem name="1.1Ghz" value="1100000"/> 
-             		<spinnerItem name="1.0Ghz" value="1000000"/> 
-             		<spinnerItem name="900Mhz" value="900000"/> 
-             		<spinnerItem name="800Mhz" value="800000"/> 
-             		<spinnerItem name="700Mhz" value="700000"/>
-	     		<spinnerItem name="600Mhz" value="600000"/> 
-             		<spinnerItem name="500Mhz" value="500000"/> 
-             		<spinnerItem name="400Mhz" value="400000"/> 
-             		<spinnerItem name="300Mhz" value="300000"/> 
-             		<spinnerItem name="200Mhz" value="200000"/>
-	     		<spinnerItem name="100Mhz" value="100000"/> 
-	     		<spinnerItem name="50Mhz" value="50000"/>
-	     		<spinnerItem name="25Mhz" value="25000"/>  
-	  	</spinner>
-    </settingsPane>
-    <settingsPane description="Set all of the low power profile options. These only apply when the the battery is lower that the Low Power Amount (Low Power is for Screen On Only. It has a lower priority than Screen Off)" name="Low Power Settings" name="Low Power Settings">
-		<seekBar description="The amount the battery should be at before the battery profile starts (Set to 0 to disable this profile)"
-                name="Low Power Amount" action="lowbatt" unit="" min="1" reversed="false" step="1" max="100"/>
-		<spinner description="This will set the low power CPU governor." name="Low Power CPU Governor" action="scaling_governor_batt">
-	    		<spinnerItem name="hyper" value="hyper"/>
-			<spinnerItem name="Sakuractive" value="sakuractive"/> 
-			<spinnerItem name="Abyssplug" value="abyssplug"/> 
-			<spinnerItem name="Wheatley" value="wheatley"/> 
-			<spinnerItem name="HotPlug" value="hotplug"/> 
-			<spinnerItem name="Scary" value="Scary"/> 
-			<spinnerItem name="Lulzactive" value="lulzactive"/> 
-			<spinnerItem name="Skywalker" value="skywalker"/> 
-			<spinnerItem name="Brazilianwax" value="brazilianwax"/> 
-			<spinnerItem name="SavagedZen" value="SavagedZen"/> 
-			<spinnerItem name="LagFree" value="lagfree"/> 
-			<spinnerItem name="SmartassV2" value="smartassV2"/> 
-			<spinnerItem name="Lazy" value="lazy"/> 
-          		<spinnerItem name="Pegasusq" value="pegasusq"/> 
-			<spinnerItem name="Interactive" value="interactive"/>
-			<spinnerItem name="InteractiveX" value="Interactivex"/>  
-          		<spinnerItem name="Conservative" value="conservative"/> 
-			<spinnerItem name="Ondemand" value="ondemand"/>
-			<spinnerItem name="OndemandX" value="ondemandx"/>
-			<spinnerItem name="Intellidemand" value="Intellidemand"/>
-			<spinnerItem name="Lionheart" value="Lionheart"/>			 
-			<spinnerItem name="Powersave" value="powersave"/>
-			<spinnerItem name="Performance" value="performance"/>
-	  	</spinner>
-		<spinner description="The maximum frequency allowed when in low power state" name="Low Power Scaling Max Freq" action="scaling_max_freq_batt">
-             		<spinnerItem name="1.6Ghz" value="1600000"/> 
-             		<spinnerItem name="1.5Ghz" value="1500000"/> 
-             		<spinnerItem name="1.4Ghz" value="1400000"/> 
-             		<spinnerItem name="1.3Ghz" value="1300000"/> 
-             		<spinnerItem name="1.2Ghz" value="1200000"/>
-	 		<spinnerItem name="1.1Ghz" value="1100000"/> 
-          		<spinnerItem name="1.0Ghz" value="1000000"/> 
-         		<spinnerItem name="900Mhz" value="900000"/> 
-         		<spinnerItem name="800Mhz" value="800000"/> 
-           		<spinnerItem name="700Mhz" value="700000"/>
-	   		<spinnerItem name="600Mhz" value="600000"/> 
-           		<spinnerItem name="500Mhz" value="500000"/> 
-            		<spinnerItem name="400Mhz" value="400000"/> 
-            		<spinnerItem name="300Mhz" value="300000"/> 
-            		<spinnerItem name="200Mhz" value="200000"/>
-	     		<spinnerItem name="100Mhz" value="100000"/> 
-	     		<spinnerItem name="50Mhz" value="50000"/>
-	    		<spinnerItem name="25Mhz" value="25000"/>  
-	 	 </spinner>
-	  	<spinner description="The minimum frequency allowed when in low power state" name="Low Power Scaling Min Freq" action="scaling_min_freq_batt">
-             		<spinnerItem name="1.6Ghz" value="1600000"/> 
-             		<spinnerItem name="1.5Ghz" value="1500000"/> 
-		        <spinnerItem name="1.4Ghz" value="1400000"/> 
-             		<spinnerItem name="1.3Ghz" value="1300000"/> 
-             		<spinnerItem name="1.2Ghz" value="1200000"/>
-	     		<spinnerItem name="1.1Ghz" value="1100000"/> 
-             		<spinnerItem name="1.0Ghz" value="1000000"/> 
-             		<spinnerItem name="900Mhz" value="900000"/> 
-             		<spinnerItem name="800Mhz" value="800000"/> 
-             		<spinnerItem name="700Mhz" value="700000"/>
-	     		<spinnerItem name="600Mhz" value="600000"/> 
-             		<spinnerItem name="500Mhz" value="500000"/> 
-             		<spinnerItem name="400Mhz" value="400000"/> 
-             		<spinnerItem name="300Mhz" value="300000"/> 
-             		<spinnerItem name="200Mhz" value="200000"/>
-	     		<spinnerItem name="100Mhz" value="100000"/> 
-	     		<spinnerItem name="50Mhz" value="50000"/>
-	     		<spinnerItem name="25Mhz" value="25000"/>  
-	  	</spinner>
-    </settingsPane>
-  </settingsTab>
-  <settingsTab name="GPU">
-    <settingsPane description="GPU Frequency Settings (Samsung Defaults: 160,267,267)(Kuban Defaults: 100,160,267)" name="GPUFreq">
-      <spinner description="Changes the first (lowest) GPU frequency step" name="GPU Freq Step1" action="gpu-freq 1">
-             <spinnerItem name="400MHz" value="400"/> 
-             <spinnerItem name="267MHz" value="267"/> 
-             <spinnerItem name="200MHz" value="200"/> 
-             <spinnerItem name="160MHz" value="160"/> 
-             <spinnerItem name="133MHz" value="133"/> 
-             <spinnerItem name="100MHz" value="100"/> 
-             <spinnerItem name="66MHz" value="66"/> 
-             <spinnerItem name="40MHz" value="40"/> 
-      </spinner>
-      <spinner description="Changes the second (middle) GPU frequency step" name="GPU Freq Step2" action="gpu-freq 2">
-             <spinnerItem name="400MHz" value="400"/> 
-             <spinnerItem name="267MHz" value="267"/> 
-             <spinnerItem name="200MHz" value="200"/> 
-             <spinnerItem name="160MHz" value="160"/> 
-             <spinnerItem name="133MHz" value="133"/> 
-             <spinnerItem name="100MHz" value="100"/> 
-             <spinnerItem name="66MHz" value="66"/> 
-             <spinnerItem name="40MHz" value="40"/> 
-      </spinner>
-      <spinner description="Changes the third (last) GPU frequency step" name="GPU Freq Step3" action="gpu-freq 3">
-             <spinnerItem name="400MHz" value="400"/> 
-             <spinnerItem name="267MHz" value="267"/> 
-             <spinnerItem name="200MHz" value="200"/> 
-             <spinnerItem name="160MHz" value="160"/> 
-             <spinnerItem name="133MHz" value="133"/> 
-             <spinnerItem name="100MHz" value="100"/> 
-             <spinnerItem name="66MHz" value="66"/> 
-             <spinnerItem name="40MHz" value="40"/> 
-      </spinner>
-    </settingsPane>
-    <settingsPane description="GPU Voltage Levels (Samsung Defaults: 950,1050,1050)(Kuban Defaults: 950,950,1000)" name="GPU Voltage Levels">
-      <seekBar description="GPU Voltage for the first (lowest) step" 
-		name="GPU Voltage Level1" action="gpu-voltage 1" unit="mV" min="800" reversed="false" step="50" max="1200"/>
-      <seekBar description="GPU Voltage for the second (middle) step" 
-		name="GPU Voltage Level2" action="gpu-voltage 2" unit="mV" min="800" reversed="false" step="50" max="1200"/>
-      <seekBar description="GPU Voltage for the third (highest) step" 
-		name="GPU Voltage Level3" action="gpu-voltage 3" unit="mV" min="800" reversed="false" step="50" max="1200"/>
-    </settingsPane>
-    <settingsPane description="GPU load thresholds to change between frequency steps" name="GPU Thresholds">
-      <seekBar description="GPU threshold to jump up from first to second step" 
-		name="GPU Threshold 1-UP" action="gpu-thresh 1UP" unit="%" min="0" reversed="false" step="5" max="100"/>
-      <seekBar description="GPU threshold to jump down from second to first step" 
-		name="GPU Threshold 2-DOWN" action="gpu-thresh 2DOWN" unit="%" min="0" reversed="false" step="5" max="100"/>
-      <seekBar description="GPU threshold to jump up from second to third step" 
-		name="GPU Threshold 2-UP" action="gpu-thresh 2UP" unit="%" min="0" reversed="false" step="5" max="100"/>
-      <seekBar description="GPU threshold to jump down from third to second step" 
-		name="GPU Threshold 3-DOWN" action="gpu-thresh 3DOWN" unit="%" min="0" reversed="false" step="5" max="100"/>
-    </settingsPane>
-    <settingsPane description="The number of cycles that the GPU stays at the specific level. (Samsung Defaults: 1,1 and 1)(Kuban Defaults: 0,0 and 1)" name="GPU StayCount">
-      <seekBar description="GPU first (for the lowest freq) StayCount" 
-		name="GPU StayCount1" action="gpu-staycount 1" unit=" sec" min="0" reversed="false" step="1" max="5"/>
-      <seekBar description="GPU second (for the middle freq) StayCount" 
-		name="GPU StayCount2" action="gpu-staycount 2" unit=" sec" min="0" reversed="false" step="1" max="5"/>
-      <seekBar description="GPU third (for the highest freq) StayCount" 
-		name="GPU StayCount3" action="gpu-staycount 3" unit=" sec" min="0" reversed="false" step="1" max="5"/>
-    </settingsPane>
-  </settingsTab>
-  <settingsTab name="Kernel">
-    <settingsPane description="Kernel Settings" name="Kernel Settings">
-      <seekBar description="Hung Task Timeout in Seconds (Samsung Default: 0)(Kuban Default: 30)"
-                name="Hung Task Timeout" action="generic /proc/sys/kernel/hung_task_timeout_secs" unit=" " min="0" reversed="false" step="1" max="60"/>
-	  <seekBar description="If this is zero, the kernel will loop on a panic; if non-zero it indicates that the kernel should autoreboot after this number of seconds. (Samsung Default: 1)(Kuban Default: 30)"
-                name="Kernel Panic" action="generic /proc/sys/kernel/panic" unit=" " min="0" reversed="false" step="1" max="60"/>
-	  <seekBar description="The number of read bits required for waking up processes that sleep (Samsung Default: 64)(Kuban Default: 256)"
-                name="Read Wakeup Threshold" action="generic /proc/sys/kernel/random/read_wakeup_threshold" unit=" " min="32" reversed="false" step="32" max="1024"/>
-	  <seekBar description="The number of write bits required for waking up processes that sleep (Samsung Default: 128)(Kuban Default: 256)"
-                name="Write Wakeup Threshold" action="generic /proc/sys/kernel/random/write_wakeup_threshold" unit=" " min="32" reversed="false" step="32" max="1024"/>
-    </settingsPane>
-  </settingsTab>
-  <settingsTab name="I/O and USB">
-    <settingsPane description="I/O and USB Settings" name="I/O and USB Settings">
-      <spinner description="This will set the default I/O scheduler. Default I/O scheduler will only be set during early stages of booting (before init.d execution) and can be overriden by later scripts or apps." name="Default I/O Scheduler" action="generic /sys/block/mmcblk0/queue/scheduler">
-        <spinnerItem name="SIO" value="sio"/>
-        <spinnerItem name="NOOP" value="noop"/> 
-        <spinnerItem name="Deadline" value="deadline"/> 
-        <spinnerItem name="VR" value="vr"/> 
-        <spinnerItem name="CFQ" value="cfq"/>  
-      </spinner>
-	 <spinner description="SD Read Ahead (Samsung Default: 256)(Kuban Default: 4096)" name="SD Read Ahead" action="readahead">
-             <spinnerItem name="4096" value="4096"/> 
-             <spinnerItem name="3072" value="3072"/> 
-             <spinnerItem name="2048" value="2048"/> 
-			 <spinnerItem name="1024" value="1024"/>
-			 <spinnerItem name="512" value="512"/>
-			 <spinnerItem name="256" value="256"/>
-			 <spinnerItem name="128" value="128"/>
-      </spinner>
-      <spinner description="Charge current setting" name="Charge Current" action="chargecurrent">
-             <spinnerItem name="AC:650mA, Misc,USB:450mA (Stock)" value="1"/> 
-             <spinnerItem name="AC,Misc:650mA, USB:450mA" value="2"/> 
-             <spinnerItem name="All:650mA (risky for USB ports)" value="3"/> 
-      </spinner>
-      <spinner description="Change USB connection mode. Either leave it as default or force it to mass storage mode (you will see your sdcards as disks) or mtp" name="USB Mass Storage Mode" action="usb-mode">
-        <spinnerItem name="Default" value="default"/> 
-        <spinnerItem name="Force Mass Storage Mode" value="mass_storage-adb"/> 
-        <spinnerItem name="Force MTP Mode" value="mtp-adb"/> 
-      </spinner>
-    </settingsPane>
-  </settingsTab>
-  <settingsTab name="Memory">
-    <settingsPane  description="As you write out data ultimately intended for disk, Linux caches this information in an area of memory called the page cache. Tweak how these settings work" name="Memory Settings">
-	<seekBar description="VFS Cache Pressure (Samsung Default: 100)(Kuban Default: 10)"
-                name="VFS Cache Pressure" action="generic /proc/sys/vm/vfs_cache_pressure" unit=" " min="0" reversed="false" step="10" max="100"/>
-	<seekBar description=" Maximum percentage of active that can be filled with dirty pages before pdflush begins to write them (Samsung Default: 0)(Kuban Default: 5)"
-                name="Dirty Background Ratio" action="generic /proc/sysr/vm/dirty_background_ratio" unit=" " min="0" reversed="false" step="5" max="100"/>
-	<seekBar description="In hundredths of a second, how long data can be in the page cache before it's considered expired and must be written at the next opportunity (Samsung Default: 200)(Kuban Default: 1000)"
-                name="Dirty Expire Centisecs" action="generic /proc/sys/vm/dirty_expire_centisecs" unit=" " min="0" reversed="false" step="100" max="2000"/>
-	<seekBar description="Maximum percentage of total memory that can be filled with dirty pages before processes are forced to write dirty buffers themselves during their time slice instead of being allowed to do more writes (Samsung Default: 20)(Kuban Default: 90)"
-                name="Dirty Ratio" action="generic /proc/sys/vm/dirty_ratio" unit=" " min="0" reversed="false" step="10" max="100"/>
-	<seekBar description="In hundredths of a second, this is how often pdflush wakes up to write data to disk (Samsung Default: 500)(Kuban Default: 2000)"
-                name="Dirty Writeback Centisecs" action="generic /proc/sys/vm/dirty_writeback_centisecs" unit=" " min="0" reversed="false" step="100" max="2000"/>
-	<seekBar description="A swappiness setting of zero means that the disk will be avoided unless absolutely necessary (you run out of memory), while a swappiness setting of 100 means that programs will be swapped to disk almost instantly (Samsung Default: 0)(Kuban Default: 50)"
-                name="Swappiness" action="generic /proc/sys/vm/swappiness" unit=" " min="0" reversed="false" step="10" max="100"/>
-    </settingsPane>
-  </settingsTab>
-  <settingsTab name="Network">
-    <settingsPane description="Network and WIFI Settings" name="Network and WIFI Settings">
-      <seekBar description="TCP Keep Alive Time (Samsung Default: 7200)(Kuban Default: 1800)"
-                name="TCP Keep Alive Time" action="generic /proc/sys/net/ipv4/tcp_keepalive_time" unit="ms" min="1800" reversed="false" step="100" max="7200"/>
-	  <seekBar description="The tcp_keepalive_probes variable tells the kernel how many TCP keepalive probes to sendout before it decides a specific connection is broken. (Samsung Default: 9)(Kuban Default: 5)"
-                name="TCP Keep Alive Probes" action="generic /proc/sys/net/ipv4/tcp_keepalive_probes" unit="" min="0" reversed="false" step="1" max="50"/>
-	  <seekBar description="The tcp_keepalive_intvl variable tells the kernel how long to wait for a reply on each keep alive probe. (Samsung Default: 72)(Kuban Default: 20)"
-                name="TCP Keep Alive Intvl" action="generic /proc/sys/net/ipv4/tcp_keepalive_intvl" unit="" min="5" reversed="false" step="5" max="100"/>
-	  <spinner description="The tcp_timestamps variable tells the kernel to use timestamps as de?ned in RFC 1323. Inshort, this is an TCP option that can be used to calculate the Round Trip Measurement in abetter way than the retransmission timeout method can (Samsung Default: On)(Kuban Default: Off)" name="TCP Timestamps" action="generic /proc/sys/net/ipv4/tcp_timestamps">
-        <spinnerItem name="On" value="1"/> 
-        <spinnerItem name="Off" value="0"/> 
-      </spinner>
-	  <spinner description="This variable enables the fast recycling function of TIME-WAIT sockets (Samsung Default: Off)(Kuban Default: On)" name="TCP Recycle" action="generic /proc/sys/net/ipv4/tcp_tw_recycle">
-        <spinnerItem name="On" value="1"/> 
-        <spinnerItem name="Off" value="0"/> 
-      </spinner>
-	  <spinner description="If this value is set to On, the kernel chooses to totally ignore all ICMP Echo requests (Samsung Default: Off)(Kuban Default: On)" name="ICMP Echo Ignore All" action="generic /proc/sys/net/ipv4/icmp_echo_ignore_all">
-        <spinnerItem name="On" value="1"/> 
-        <spinnerItem name="Off" value="0"/> 
-      </spinner>
-	  <seekBar description="The tcp_max_syn_backlog variable tells your box how many SYN requests to keep in memory. (Samsung Default: 512)(Kuban Default: 4096)"
-                name="TCP Max SYN Backlog" action="generic /proc/sys/net/ipv4/tcp_max_syn_backlog" unit="" min="128" reversed="false" step="128" max="4096"/>
-    </settingsPane>
-  </settingsTab>
-  <!--<settingsTab name="BLN">
-    <settingsPane description="BackLightNotification and Touchkey related Settings" name="BackLightNotification">
-       <checkbox description="BackLightNotification" name="BLN" action="generic /sys/class/misc/notification/notification_enabled" label="BLN"/>
-       <spinner description="Notification timeout. 0: disabled" name="notification_timeout" action="generic /sys/class/misc/notification/notification_timeout">
-             <spinnerItem name="Never timeout" value="0"/> 
-             <spinnerItem name="1 minute" value="60000"/> 
-             <spinnerItem name="3 minutes" value="180000"/> 
-             <spinnerItem name="5 minutes" value="300000"/> 
-             <spinnerItem name="10 minutes" value="600000"/> 
-             <spinnerItem name="20 minutes" value="1200000"/> 
-             <spinnerItem name="30 minutes" value="1800000"/> 
-             <spinnerItem name="60 minutes" value="3600000"/> 
-             <spinnerItem name="120 minutes" value="7200000"/> 
-       </spinner>
-       <spinner description="This setting will set led behavior in BLN." name="BLN Effect" action="bln_effect">
-             <spinnerItem name="Steady" value="0"/> 
-             <spinnerItem name="Breathing" value="1"/> 
-             <spinnerItem name="Blinking" value="2"/> 
-       </spinner> 
-       <spinner description="Led timeout. Leave it disabled if your ROM already has led timeout support. In CM9, if you have lights enabled screen brightness changes may trigger lights on. It is normal. If you want them to stay disabled you have to disable leds in CM9 menu." name="led_timeout" action="generic /sys/class/misc/notification/led_timeout">
-             <spinnerItem name="Disabled" value="0"/> 
-             <spinnerItem name="1.5 sec" value="1500"/> 
-             <spinnerItem name="3 sec" value="3000"/> 
-             <spinnerItem name="6 sec" value="6000"/> 
-             <spinnerItem name="15 sec" value="15000"/> 
-             <spinnerItem name="30 sec" value="30000"/> 
-             <spinnerItem name="60 sec" value="60000"/> 
-       </spinner>
-       <checkbox description="Led fadeout effect. If you are on a Samsung ROM, you need to set touchkey leds to always on or always off and use led timeout in ExTweaks." name="led-fadeout" action="generic /sys/class/misc/notification/led_fadeout" label="led-fadeout"/>
-       <checkbox description="Selecting this will activate turning touckey leds on when you touch the screen (only when led timeout is enabled)." name="Leds on with touch" action="generic /sys/class/misc/notification/led_on_touch" label="led-on-touch"/>
-       <button description="Use this button to test bln. BLN will be active after you turn the screen off." name="Test BLN" action="test-bln" label="Test BLN"/>
-       <seekBar description="Controls touchpad led voltage level (default: 3000)" 
-		name="Led Voltage Level" action="generic /sys/devices/virtual/sec/sec_touchkey/touchkey_brightness" unit=" mV" min="2500" reversed="false" step="50" max="3300"/>
-    </settingsPane>
-  </settingsTab>-->
-  <settingsTab name="Misc">
-    <settingsPane description="Screen Settings" name="Screen Settings">
-	  <seekBar description="Touch Sensitivity Lower value = higher sensitivity (Samsung Default: 40)(Kuban Default: 0)"
-                name="Touch Sensitivity" action="generic /sys/devices/virtual/sec/sec_touchscreen/tsp_threshold" unit="" min="0" reversed="false" step="10" max="80"/>
-		<seekBar description="Wifi Scan Interval (Samsung Default: 15)(Kuban Default: 180)"
-                name="Wifi Scan Interval" action="supplicant_scan_interval" unit="" min="0" reversed="false" step="10" max="500"/>
-	</settingsPane>
-  </settingsTab>
+	<settingsTab name="CPU">
+		<settingsPane description="" name="CPU Scaling Settings">
+			<spinner description="This will set the default CPU governor. Default CPU governor will only be set during early stages of booting (before init.d execution) and can be overriden by later scripts or apps." name="Default CPU Governor" action="generic /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor">
+				<spinnerItem name="Hyper" value="hyper"/>
+				<spinnerItem name="Sakuractive" value="sakuractive"/> 
+				<spinnerItem name="Abyssplug" value="abyssplug"/> 
+				<spinnerItem name="Wheatley" value="wheatley"/> 
+				<spinnerItem name="HotPlug" value="hotplug"/> 
+				<spinnerItem name="Scary" value="Scary"/> 
+				<spinnerItem name="Lulzactive" value="lulzactive"/> 
+				<spinnerItem name="Skywalker" value="skywalker"/> 
+				<spinnerItem name="Brazilianwax" value="brazilianwax"/> 
+				<spinnerItem name="SavagedZen" value="SavagedZen"/> 
+				<spinnerItem name="LagFree" value="lagfree"/> 
+				<spinnerItem name="SmartassV2" value="smartassV2"/> 
+				<spinnerItem name="Lazy" value="lazy"/> 
+				<spinnerItem name="Pegasusq" value="pegasusq"/> 
+				<spinnerItem name="Interactive" value="interactive"/>
+				<spinnerItem name="InteractiveX" value="Interactivex"/>  
+				<spinnerItem name="Conservative" value="conservative"/> 
+				<spinnerItem name="Ondemand" value="ondemand"/>
+				<spinnerItem name="OndemandX" value="ondemandx"/>
+				<spinnerItem name="Intellidemand" value="Intellidemand"/>
+				<spinnerItem name="Lionheart" value="Lionheart"/>			 
+				<spinnerItem name="Powersave" value="powersave"/>
+				<spinnerItem name="Performance" value="performance"/>
+			</spinner>
+			<spinner description="Scaling maximum frequency (Default: 1.2Ghz)" name="Scaling Max Freq" action="generic /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq">
+				<spinnerItem name="1.6Ghz" value="1600000"/>
+				<spinnerItem name="1.5Ghz" value="1500000"/>
+				<spinnerItem name="1.4Ghz" value="1400000"/>
+				<spinnerItem name="1.3Ghz" value="1300000"/>
+				<spinnerItem name="1.2Ghz" value="1200000"/>
+				<spinnerItem name="1.1Ghz" value="1100000"/>
+				<spinnerItem name="1.0Ghz" value="1000000"/>
+				<spinnerItem name="900Mhz" value="900000"/>
+				<spinnerItem name="800Mhz" value="800000"/>
+				<spinnerItem name="700Mhz" value="700000"/>
+				<spinnerItem name="600Mhz" value="600000"/>
+				<spinnerItem name="500Mhz" value="500000"/>
+				<spinnerItem name="400Mhz" value="400000"/>
+				<spinnerItem name="300Mhz" value="300000"/>
+				<spinnerItem name="200Mhz" value="200000"/>
+				<spinnerItem name="100Mhz" value="100000"/>
+				<spinnerItem name="50Mhz" value="50000"/>
+				<spinnerItem name="25Mhz" value="25000"/>
+			</spinner>
+			<spinner description="Scaling minimum frequency (Default: 200Mhz)" name="Scaling Min Freq" action="generic /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq">
+				<spinnerItem name="1.6Ghz" value="1600000"/>
+				<spinnerItem name="1.5Ghz" value="1500000"/>
+				<spinnerItem name="1.4Ghz" value="1400000"/>
+				<spinnerItem name="1.3Ghz" value="1300000"/>
+				<spinnerItem name="1.2Ghz" value="1200000"/>
+				<spinnerItem name="1.1Ghz" value="1100000"/>
+				<spinnerItem name="1.0Ghz" value="1000000"/>
+				<spinnerItem name="900Mhz" value="900000"/>
+				<spinnerItem name="800Mhz" value="800000"/>
+				<spinnerItem name="700Mhz" value="700000"/>
+				<spinnerItem name="600Mhz" value="600000"/>
+				<spinnerItem name="500Mhz" value="500000"/>
+				<spinnerItem name="400Mhz" value="400000"/>
+				<spinnerItem name="300Mhz" value="300000"/>
+				<spinnerItem name="200Mhz" value="200000"/>
+				<spinnerItem name="100Mhz" value="100000"/>
+				<spinnerItem name="50Mhz" value="50000"/>
+				<spinnerItem name="25Mhz" value="25000"/>
+			</spinner>
+			<spinner description="This setting will change CPU step count (Restart required)." name="CPU Step Count" action="generic /tmp/cpustepcount">
+				<spinnerItem name="5 (200-500-800-1000-1200MHz)" value="5"/>
+				<spinnerItem name="6 (5-steps + 1400MHz)" value="6"/>
+				<spinnerItem name="7 (6-steps + 1500MHz)" value="7"/>
+				<spinnerItem name="8 (6-steps + 100MHz + 1600MHz)" value="8"/>
+				<spinnerItem name="9 (8-step + 1500MHz)" value="9"/>
+				<spinnerItem name="18 (All available)" value="18"/>
+			</spinner>
+		</settingsPane>
+		<settingsPane description="" name="CPU Undervolting">
+			<spinner description="Sets the CPU undervolting value which will be applied during boot time only. It will not have any effect until you restart your device. Remember: if you change this value and your device doesn't boot you will have to reset extweaks settings using CWM recovery. This value will be applied to all CPU steps before any script or app execution. If you use any script or voltage control app this setting may be overriden by those." name="CPU Undervolting" action="generic /tmp/cpu_undervolting">
+				<spinnerItem name="No Undervolting" value="0"/>
+				<spinnerItem name=" -25 mV" value="-25"/>
+				<spinnerItem name=" -50 mV" value="-50"/>
+				<spinnerItem name=" -75 mV" value="-75"/>
+				<spinnerItem name="-100 mV" value="-100"/>
+			</spinner>
+		</settingsPane>
+		<settingsPane description="" name="CPU Idle and Power Settings">
+			<spinner description="Sets the CPU Idle Mode. AFTR+LPA is the default and best for the battery life but if you have problems try Idle+LPA." name="CPU Idle Mode" action="generic /sys/module/cpuidle_exynos4/parameters/enable_mask">
+				<spinnerItem name="AFTR + LPA (default)" value="3"/>
+				<spinnerItem name="Idle + LPA" value="2"/>
+				<spinnerItem name="AFTR only" value="1"/>
+				<spinnerItem name="Idle only" value="0"/>
+			</spinner>
+		</settingsPane>
+	</settingsTab>
+	<settingsTab name="Profiles"> 
+		<settingsPane description="Turn Profiles On or Off" name="Toggle Profiles">
+			<spinner description="This will enable or disable profiles. When profiles are enabled, all fields below will be applied." name="Enable Profiles" action="enabled">
+				<spinnerItem name="Off" value="0"/> 
+				<spinnerItem name="On" value="1"/>
+			</spinner>
+		</settingsPane>
+		<settingsPane description="Set all of the screen off profile options. These only apply when the sceen is turned off (Screen Off Has the highest Priority)" name="Screen Off Settings">		
+			<spinner description="This will set the Screen Off CPU governor. (Default: Hyper)" name="Screen Off CPU Governor" action="scaling_governor_sleep">
+				<spinnerItem name="Hyper" value="hyper"/>
+				<spinnerItem name="Sakuractive" value="sakuractive"/>
+				<spinnerItem name="Abyssplug" value="abyssplug"/>
+				<spinnerItem name="Wheatley" value="wheatley"/>
+				<spinnerItem name="HotPlug" value="hotplug"/>
+				<spinnerItem name="Scary" value="Scary"/>
+				<spinnerItem name="Lulzactive" value="lulzactive"/>
+				<spinnerItem name="Skywalker" value="skywalker"/>
+				<spinnerItem name="Brazilianwax" value="brazilianwax"/>
+				<spinnerItem name="SavagedZen" value="SavagedZen"/>
+				<spinnerItem name="LagFree" value="lagfree"/>
+				<spinnerItem name="SmartassV2" value="smartassV2"/>
+				<spinnerItem name="Lazy" value="lazy"/>
+				<spinnerItem name="Pegasusq" value="pegasusq"/>
+				<spinnerItem name="Interactive" value="interactive"/>
+				<spinnerItem name="InteractiveX" value="Interactivex"/>
+				<spinnerItem name="Conservative" value="conservative"/>
+				<spinnerItem name="Ondemand" value="ondemand"/>
+				<spinnerItem name="OndemandX" value="ondemandx"/>
+				<spinnerItem name="Intellidemand" value="Intellidemand"/>
+				<spinnerItem name="Lionheart" value="Lionheart"/>
+				<spinnerItem name="Powersave" value="powersave"/>
+				<spinnerItem name="Performance" value="performance"/>
+			</spinner>
+			<spinner description="The maximum frequency allowed when the screen is off" name="Screen Off Scaling Max Freq" action="scaling_max_freq_sleep">
+				<spinnerItem name="1.6Ghz" value="1600000"/>
+				<spinnerItem name="1.5Ghz" value="1500000"/>
+				<spinnerItem name="1.4Ghz" value="1400000"/>
+				<spinnerItem name="1.3Ghz" value="1300000"/>
+				<spinnerItem name="1.2Ghz" value="1200000"/>
+				<spinnerItem name="1.1Ghz" value="1100000"/>
+				<spinnerItem name="1.0Ghz" value="1000000"/>
+				<spinnerItem name="900Mhz" value="900000"/>
+				<spinnerItem name="800Mhz" value="800000"/>
+				<spinnerItem name="700Mhz" value="700000"/>
+				<spinnerItem name="600Mhz" value="600000"/>
+				<spinnerItem name="500Mhz" value="500000"/>
+				<spinnerItem name="400Mhz" value="400000"/>
+				<spinnerItem name="300Mhz" value="300000"/>
+				<spinnerItem name="200Mhz" value="200000"/>
+				<spinnerItem name="100Mhz" value="100000"/>
+				<spinnerItem name="50Mhz" value="50000"/>
+				<spinnerItem name="25Mhz" value="25000"/>
+			</spinner>
+			<spinner description="The minimum frequency allowed when the screen is off" name="Screen Off Scaling Min Freq" action="scaling_min_freq_sleep">
+				<spinnerItem name="1.6Ghz" value="1600000"/>
+				<spinnerItem name="1.5Ghz" value="1500000"/>
+				<spinnerItem name="1.4Ghz" value="1400000"/>
+				<spinnerItem name="1.3Ghz" value="1300000"/>
+				<spinnerItem name="1.2Ghz" value="1200000"/>
+				<spinnerItem name="1.1Ghz" value="1100000"/>
+				<spinnerItem name="1.0Ghz" value="1000000"/>
+				<spinnerItem name="900Mhz" value="900000"/>
+				<spinnerItem name="800Mhz" value="800000"/>
+				<spinnerItem name="700Mhz" value="700000"/>
+				<spinnerItem name="600Mhz" value="600000"/>
+				<spinnerItem name="500Mhz" value="500000"/>
+				<spinnerItem name="400Mhz" value="400000"/>
+				<spinnerItem name="300Mhz" value="300000"/>
+				<spinnerItem name="200Mhz" value="200000"/>
+				<spinnerItem name="100Mhz" value="100000"/>
+				<spinnerItem name="50Mhz" value="50000"/>
+				<spinnerItem name="25Mhz" value="25000"/>
+			</spinner>
+			<spinner description="This will set the Screen Off I/O scheduler. (Default: SIO)" name="Screen Off I/O Scheduler" action="scheduleroff">
+				<spinnerItem name="SIO" value="sio"/>
+				<spinnerItem name="NOOP" value="noop"/>
+				<spinnerItem name="Deadline" value="deadline"/>
+				<spinnerItem name="VR" value="vr"/>
+				<spinnerItem name="CFQ" value="cfq"/>
+			</spinner>
+		</settingsPane>
+		<settingsPane description="This will Set the options below while the screen is on and the phone is charging (Will Override the low power profile)" name="Charging Settings">
+			<spinner description="This will set the charging CPU governor." name="Charging CPU Governor" action="scaling_governor_charging">
+				<spinnerItem name="Hyper" value="hyper"/>
+				<spinnerItem name="Sakuractive" value="sakuractive"/> 
+				<spinnerItem name="Abyssplug" value="abyssplug"/> 
+				<spinnerItem name="Wheatley" value="wheatley"/> 
+				<spinnerItem name="HotPlug" value="hotplug"/> 
+				<spinnerItem name="Scary" value="Scary"/> 
+				<spinnerItem name="Lulzactive" value="lulzactive"/> 
+				<spinnerItem name="Skywalker" value="skywalker"/> 
+				<spinnerItem name="Brazilianwax" value="brazilianwax"/> 
+				<spinnerItem name="SavagedZen" value="SavagedZen"/> 
+				<spinnerItem name="LagFree" value="lagfree"/> 
+				<spinnerItem name="SmartassV2" value="smartassV2"/> 
+				<spinnerItem name="Lazy" value="lazy"/> 
+				<spinnerItem name="Pegasusq" value="pegasusq"/> 
+				<spinnerItem name="Interactive" value="interactive"/>
+				<spinnerItem name="InteractiveX" value="Interactivex"/>  
+				<spinnerItem name="Conservative" value="conservative"/> 
+				<spinnerItem name="Ondemand" value="ondemand"/>
+				<spinnerItem name="OndemandX" value="ondemandx"/>
+				<spinnerItem name="Intellidemand" value="Intellidemand"/>
+				<spinnerItem name="Lionheart" value="Lionheart"/>			 
+				<spinnerItem name="Powersave" value="powersave"/>
+				<spinnerItem name="Performance" value="performance"/>
+			</spinner>
+			<spinner description="The maximum frequency allowed when charging" name="Charging Scaling Max Freq" action="scaling_max_freq_charging">
+				<spinnerItem name="1.6Ghz" value="1600000"/>
+				<spinnerItem name="1.5Ghz" value="1500000"/>
+				<spinnerItem name="1.4Ghz" value="1400000"/>
+				<spinnerItem name="1.3Ghz" value="1300000"/>
+				<spinnerItem name="1.2Ghz" value="1200000"/>
+				<spinnerItem name="1.1Ghz" value="1100000"/>
+				<spinnerItem name="1.0Ghz" value="1000000"/>
+				<spinnerItem name="900Mhz" value="900000"/>
+				<spinnerItem name="800Mhz" value="800000"/>
+				<spinnerItem name="700Mhz" value="700000"/>
+				<spinnerItem name="600Mhz" value="600000"/>
+				<spinnerItem name="500Mhz" value="500000"/>
+				<spinnerItem name="400Mhz" value="400000"/>
+				<spinnerItem name="300Mhz" value="300000"/>
+				<spinnerItem name="200Mhz" value="200000"/>
+				<spinnerItem name="100Mhz" value="100000"/>
+				<spinnerItem name="50Mhz" value="50000"/>
+				<spinnerItem name="25Mhz" value="25000"/>
+			</spinner>
+			<spinner description="The minimum frequency allowed when charging" name="charging Scaling Min Freq" action="scaling_min_freq_charging">
+				<spinnerItem name="1.6Ghz" value="1600000"/>
+				<spinnerItem name="1.5Ghz" value="1500000"/>
+				<spinnerItem name="1.4Ghz" value="1400000"/>
+				<spinnerItem name="1.3Ghz" value="1300000"/>
+				<spinnerItem name="1.2Ghz" value="1200000"/>
+				<spinnerItem name="1.1Ghz" value="1100000"/>
+				<spinnerItem name="1.0Ghz" value="1000000"/>
+				<spinnerItem name="900Mhz" value="900000"/>
+				<spinnerItem name="800Mhz" value="800000"/>
+				<spinnerItem name="700Mhz" value="700000"/>
+				<spinnerItem name="600Mhz" value="600000"/>
+				<spinnerItem name="500Mhz" value="500000"/>
+				<spinnerItem name="400Mhz" value="400000"/>
+				<spinnerItem name="300Mhz" value="300000"/>
+				<spinnerItem name="200Mhz" value="200000"/>
+				<spinnerItem name="100Mhz" value="100000"/>
+				<spinnerItem name="50Mhz" value="50000"/>
+				<spinnerItem name="25Mhz" value="25000"/>
+			</spinner>
+		</settingsPane>
+		<settingsPane description="Set all of the low power profile options. These only apply when the the battery is lower that the Low Power Amount (Low Power is for Screen On Only. It has a lower priority than Screen Off)" name="Low Power Settings" name="Low Power Settings">
+			<seekBar description="The amount the battery should be at before the battery profile starts (Set to 0 to disable this profile)" name="Low Power Amount" action="lowbatt" unit="" min="1" reversed="false" step="1" max="100"/>
+			<spinner description="This will set the low power CPU governor." name="Low Power CPU Governor" action="scaling_governor_batt">
+				<spinnerItem name="Hyper" value="hyper"/>
+				<spinnerItem name="Sakuractive" value="sakuractive"/> 
+				<spinnerItem name="Abyssplug" value="abyssplug"/> 
+				<spinnerItem name="Wheatley" value="wheatley"/> 
+				<spinnerItem name="HotPlug" value="hotplug"/> 
+				<spinnerItem name="Scary" value="Scary"/> 
+				<spinnerItem name="Lulzactive" value="lulzactive"/> 
+				<spinnerItem name="Skywalker" value="skywalker"/> 
+				<spinnerItem name="Brazilianwax" value="brazilianwax"/> 
+				<spinnerItem name="SavagedZen" value="SavagedZen"/> 
+				<spinnerItem name="LagFree" value="lagfree"/> 
+				<spinnerItem name="SmartassV2" value="smartassV2"/> 
+				<spinnerItem name="Lazy" value="lazy"/> 
+				<spinnerItem name="Pegasusq" value="pegasusq"/> 
+				<spinnerItem name="Interactive" value="interactive"/>
+				<spinnerItem name="InteractiveX" value="Interactivex"/>  
+				<spinnerItem name="Conservative" value="conservative"/> 
+				<spinnerItem name="Ondemand" value="ondemand"/>
+				<spinnerItem name="OndemandX" value="ondemandx"/>
+				<spinnerItem name="Intellidemand" value="Intellidemand"/>
+				<spinnerItem name="Lionheart" value="Lionheart"/>			 
+				<spinnerItem name="Powersave" value="powersave"/>
+				<spinnerItem name="Performance" value="performance"/>
+			</spinner>
+			<spinner description="The maximum frequency allowed when in low power state" name="Low Power Scaling Max Freq" action="scaling_max_freq_batt">
+				<spinnerItem name="1.6Ghz" value="1600000"/> 
+				<spinnerItem name="1.5Ghz" value="1500000"/> 
+				<spinnerItem name="1.4Ghz" value="1400000"/> 
+				<spinnerItem name="1.3Ghz" value="1300000"/> 
+				<spinnerItem name="1.2Ghz" value="1200000"/>
+				<spinnerItem name="1.1Ghz" value="1100000"/> 
+				<spinnerItem name="1.0Ghz" value="1000000"/> 
+				<spinnerItem name="900Mhz" value="900000"/> 
+				<spinnerItem name="800Mhz" value="800000"/> 
+				<spinnerItem name="700Mhz" value="700000"/>
+				<spinnerItem name="600Mhz" value="600000"/> 
+				<spinnerItem name="500Mhz" value="500000"/> 
+				<spinnerItem name="400Mhz" value="400000"/> 
+				<spinnerItem name="300Mhz" value="300000"/> 
+				<spinnerItem name="200Mhz" value="200000"/>
+				<spinnerItem name="100Mhz" value="100000"/> 
+				<spinnerItem name="50Mhz" value="50000"/>
+				<spinnerItem name="25Mhz" value="25000"/>
+			</spinner>
+			<spinner description="The minimum frequency allowed when in low power state" name="Low Power Scaling Min Freq" action="scaling_min_freq_batt">
+				<spinnerItem name="1.6Ghz" value="1600000"/> 
+				<spinnerItem name="1.5Ghz" value="1500000"/> 
+				<spinnerItem name="1.4Ghz" value="1400000"/> 
+				<spinnerItem name="1.3Ghz" value="1300000"/> 
+				<spinnerItem name="1.2Ghz" value="1200000"/>
+				<spinnerItem name="1.1Ghz" value="1100000"/> 
+				<spinnerItem name="1.0Ghz" value="1000000"/> 
+				<spinnerItem name="900Mhz" value="900000"/> 
+				<spinnerItem name="800Mhz" value="800000"/> 
+				<spinnerItem name="700Mhz" value="700000"/>
+				<spinnerItem name="600Mhz" value="600000"/> 
+				<spinnerItem name="500Mhz" value="500000"/> 
+				<spinnerItem name="400Mhz" value="400000"/> 
+				<spinnerItem name="300Mhz" value="300000"/> 
+				<spinnerItem name="200Mhz" value="200000"/>
+				<spinnerItem name="100Mhz" value="100000"/> 
+				<spinnerItem name="50Mhz" value="50000"/>
+				<spinnerItem name="25Mhz" value="25000"/>
+			</spinner>
+		</settingsPane>
+	</settingsTab>
+	<settingsTab name="GPU">
+		<settingsPane description="GPU Frequency Settings (Samsung Defaults: 160,267,267)(Kuban Defaults: 100,160,267)" name="GPUFreq">
+			<spinner description="Changes the first (lowest) GPU frequency step" name="GPU Freq Step1" action="gpu-freq 1">
+				<spinnerItem name="400MHz" value="400"/>
+				<spinnerItem name="267MHz" value="267"/>
+				<spinnerItem name="200MHz" value="200"/>
+				<spinnerItem name="160MHz" value="160"/>
+				<spinnerItem name="133MHz" value="133"/>
+				<spinnerItem name="100MHz" value="100"/>
+				<spinnerItem name="66MHz" value="66"/>
+				<spinnerItem name="40MHz" value="40"/>
+			</spinner>
+			<spinner description="Changes the second (middle) GPU frequency step" name="GPU Freq Step2" action="gpu-freq 2">
+				<spinnerItem name="400MHz" value="400"/> 
+				<spinnerItem name="267MHz" value="267"/> 
+				<spinnerItem name="200MHz" value="200"/> 
+				<spinnerItem name="160MHz" value="160"/> 
+				<spinnerItem name="133MHz" value="133"/> 
+				<spinnerItem name="100MHz" value="100"/> 
+				<spinnerItem name="66MHz" value="66"/> 
+				<spinnerItem name="40MHz" value="40"/>
+			</spinner>
+			<spinner description="Changes the third (last) GPU frequency step" name="GPU Freq Step3" action="gpu-freq 3">
+				<spinnerItem name="400MHz" value="400"/>
+				<spinnerItem name="267MHz" value="267"/>
+				<spinnerItem name="200MHz" value="200"/>
+				<spinnerItem name="160MHz" value="160"/>
+				<spinnerItem name="133MHz" value="133"/>
+				<spinnerItem name="100MHz" value="100"/>
+				<spinnerItem name="66MHz" value="66"/>
+				<spinnerItem name="40MHz" value="40"/>
+			</spinner>
+		</settingsPane>
+		<settingsPane description="GPU Voltage Levels (Samsung Defaults: 950,1050,1050)(Kuban Defaults: 950,950,1000)" name="GPU Voltage Levels">
+			<seekBar description="GPU Voltage for the first (lowest) step" name="GPU Voltage Level1" action="gpu-voltage 1" unit="mV" min="800" reversed="false" step="50" max="1200"/>
+			<seekBar description="GPU Voltage for the second (middle) step" name="GPU Voltage Level2" action="gpu-voltage 2" unit="mV" min="800" reversed="false" step="50" max="1200"/>
+			<seekBar description="GPU Voltage for the third (highest) step" name="GPU Voltage Level3" action="gpu-voltage 3" unit="mV" min="800" reversed="false" step="50" max="1200"/>
+		</settingsPane>
+		<settingsPane description="GPU load thresholds to change between frequency steps" name="GPU Thresholds">
+			<seekBar description="GPU threshold to jump up from first to second step" name="GPU Threshold 1-UP" action="gpu-thresh 1UP" unit="%" min="0" reversed="false" step="5" max="100"/>
+			<seekBar description="GPU threshold to jump down from second to first step" name="GPU Threshold 2-DOWN" action="gpu-thresh 2DOWN" unit="%" min="0" reversed="false" step="5" max="100"/>
+			<seekBar description="GPU threshold to jump up from second to third step" name="GPU Threshold 2-UP" action="gpu-thresh 2UP" unit="%" min="0" reversed="false" step="5" max="100"/>
+			<seekBar description="GPU threshold to jump down from third to second step" name="GPU Threshold 3-DOWN" action="gpu-thresh 3DOWN" unit="%" min="0" reversed="false" step="5" max="100"/>
+		</settingsPane>
+		<settingsPane description="The number of cycles that the GPU stays at the specific level. (Samsung Defaults: 1,1 and 1)(Kuban Defaults: 0,0 and 1)" name="GPU StayCount">
+			<seekBar description="GPU first (for the lowest freq) StayCount" name="GPU StayCount1" action="gpu-staycount 1" unit=" sec" min="0" reversed="false" step="1" max="5"/>
+			<seekBar description="GPU second (for the middle freq) StayCount" name="GPU StayCount2" action="gpu-staycount 2" unit=" sec" min="0" reversed="false" step="1" max="5"/>
+			<seekBar description="GPU third (for the highest freq) StayCount" name="GPU StayCount3" action="gpu-staycount 3" unit=" sec" min="0" reversed="false" step="1" max="5"/>
+		</settingsPane>
+	</settingsTab>
+	<settingsTab name="Kernel">
+		<settingsPane description="Kernel Settings" name="Kernel Settings">
+			<seekBar description="Hung Task Timeout in Seconds (Samsung Default: 0)(Kuban Default: 30)" name="Hung Task Timeout" action="generic /proc/sys/kernel/hung_task_timeout_secs" unit=" " min="0" reversed="false" step="1" max="60"/>
+			<seekBar description="If this is zero, the kernel will loop on a panic; if non-zero it indicates that the kernel should autoreboot after this number of seconds. (Samsung Default: 1)(Kuban Default: 30)" name="Kernel Panic" action="generic /proc/sys/kernel/panic" unit=" " min="0" reversed="false" step="1" max="60"/>
+			<seekBar description="The number of read bits required for waking up processes that sleep (Samsung Default: 64)(Kuban Default: 256)" name="Read Wakeup Threshold" action="generic /proc/sys/kernel/random/read_wakeup_threshold" unit=" " min="32" reversed="false" step="32" max="1024"/>
+			<seekBar description="The number of write bits required for waking up processes that sleep (Samsung Default: 128)(Kuban Default: 256)" name="Write Wakeup Threshold" action="generic /proc/sys/kernel/random/write_wakeup_threshold" unit=" " min="32" reversed="false" step="32" max="1024"/>
+		</settingsPane>
+	</settingsTab>
+	<settingsTab name="I/O and USB">
+		<settingsPane description="I/O and USB Settings" name="I/O and USB Settings">
+			<spinner description="This will set the default I/O scheduler. Default I/O scheduler will only be set during early stages of booting (before init.d execution) and can be overriden by later scripts or apps." name="Default I/O Scheduler" action="generic /sys/block/mmcblk0/queue/scheduler">
+				<spinnerItem name="SIO" value="sio"/>
+				<spinnerItem name="NOOP" value="noop"/> 
+				<spinnerItem name="Deadline" value="deadline"/> 
+				<spinnerItem name="VR" value="vr"/> 
+				<spinnerItem name="CFQ" value="cfq"/>  
+			</spinner>
+			<spinner description="SD Read Ahead (Samsung Default: 256)(Kuban Default: 4096)" name="SD Read Ahead" action="readahead">
+				<spinnerItem name="4096" value="4096"/> 
+				<spinnerItem name="3072" value="3072"/> 
+				<spinnerItem name="2048" value="2048"/> 
+				<spinnerItem name="1024" value="1024"/>
+				<spinnerItem name="512" value="512"/>
+				<spinnerItem name="256" value="256"/>
+				<spinnerItem name="128" value="128"/>
+			</spinner>
+			<spinner description="Charge current setting" name="Charge Current" action="chargecurrent">
+				<spinnerItem name="(AC:650mA) (Misc,USB:450mA) (Stock)" value="1"/>
+				<spinnerItem name="(AC,Misc:650mA) (USB:450mA)" value="2"/>
+				<spinnerItem name="All:650mA (Risky for USB ports)" value="3"/>
+			</spinner>
+			<spinner description="Change USB connection mode. Either leave it as default or force it to mass storage mode (you will see your sdcards as disks) or mtp" name="USB Mass Storage Mode" action="usb-mode">
+				<spinnerItem name="Default" value="default"/> 
+				<spinnerItem name="Force Mass Storage Mode" value="mass_storage-adb"/> 
+				<spinnerItem name="Force MTP Mode" value="mtp-adb"/>
+			</spinner>
+		</settingsPane>
+	</settingsTab>
+	<settingsTab name="Memory">
+		<settingsPane  description="As you write out data ultimately intended for disk, Linux caches this information in an area of memory called the page cache. Tweak how these settings work" name="Memory Settings">
+			<seekBar description="VFS Cache Pressure (Samsung Default: 100)(Kuban Default: 10)" name="VFS Cache Pressure" action="generic /proc/sys/vm/vfs_cache_pressure" unit=" " min="0" reversed="false" step="10" max="100"/>
+			<seekBar description=" Maximum percentage of active that can be filled with dirty pages before pdflush begins to write them (Samsung Default: 0)(Kuban Default: 5)" name="Dirty Background Ratio" action="generic /proc/sysr/vm/dirty_background_ratio" unit=" " min="0" reversed="false" step="5" max="100"/>
+			<seekBar description="In hundredths of a second, how long data can be in the page cache before it's considered expired and must be written at the next opportunity (Samsung Default: 200)(Kuban Default: 1000)" name="Dirty Expire Centisecs" action="generic /proc/sys/vm/dirty_expire_centisecs" unit=" " min="0" reversed="false" step="100" max="2000"/>
+			<seekBar description="Maximum percentage of total memory that can be filled with dirty pages before processes are forced to write dirty buffers themselves during their time slice instead of being allowed to do more writes (Samsung Default: 20)(Kuban Default: 90)" name="Dirty Ratio" action="generic /proc/sys/vm/dirty_ratio" unit=" " min="0" reversed="false" step="10" max="100"/>
+			<seekBar description="In hundredths of a second, this is how often pdflush wakes up to write data to disk (Samsung Default: 500)(Kuban Default: 2000)" name="Dirty Writeback Centisecs" action="generic /proc/sys/vm/dirty_writeback_centisecs" unit=" " min="0" reversed="false" step="100" max="2000"/>
+			<seekBar description="A swappiness setting of zero means that the disk will be avoided unless absolutely necessary (you run out of memory), while a swappiness setting of 100 means that programs will be swapped to disk almost instantly (Samsung Default: 0)(Kuban Default: 50)" name="Swappiness" action="generic /proc/sys/vm/swappiness" unit=" " min="0" reversed="false" step="10" max="100"/>
+		</settingsPane>
+	</settingsTab>
+	<settingsTab name="Network">
+		<settingsPane description="Network and WIFI Settings" name="Network and WIFI Settings">
+			<seekBar description="TCP Keep Alive Time (Samsung Default: 7200)(Kuban Default: 1800)" name="TCP Keep Alive Time" action="generic /proc/sys/net/ipv4/tcp_keepalive_time" unit="ms" min="1800" reversed="false" step="100" max="7200"/>
+			<seekBar description="The tcp_keepalive_probes variable tells the kernel how many TCP keepalive probes to sendout before it decides a specific connection is broken. (Samsung Default: 9)(Kuban Default: 5)" name="TCP Keep Alive Probes" action="generic /proc/sys/net/ipv4/tcp_keepalive_probes" unit="" min="0" reversed="false" step="1" max="50"/>
+			<seekBar description="The tcp_keepalive_intvl variable tells the kernel how long to wait for a reply on each keep alive probe. (Samsung Default: 72)(Kuban Default: 20)" name="TCP Keep Alive Intvl" action="generic /proc/sys/net/ipv4/tcp_keepalive_intvl" unit="" min="5" reversed="false" step="5" max="100"/>
+			<spinner description="The tcp_timestamps variable tells the kernel to use timestamps as de?ned in RFC 1323. Inshort, this is an TCP option that can be used to calculate the Round Trip Measurement in abetter way than the retransmission timeout method can (Samsung Default: On)(Kuban Default: Off)" name="TCP Timestamps" action="generic /proc/sys/net/ipv4/tcp_timestamps">
+				<spinnerItem name="On" value="1"/>
+				<spinnerItem name="Off" value="0"/>
+			</spinner>
+			<spinner description="This variable enables the fast recycling function of TIME-WAIT sockets (Samsung Default: Off)(Kuban Default: On)" name="TCP Recycle" action="generic /proc/sys/net/ipv4/tcp_tw_recycle">
+				<spinnerItem name="On" value="1"/>
+				<spinnerItem name="Off" value="0"/>
+			</spinner>
+			<spinner description="If this value is set to On, the kernel chooses to totally ignore all ICMP Echo requests (Samsung Default: Off)(Kuban Default: On)" name="ICMP Echo Ignore All" action="generic /proc/sys/net/ipv4/icmp_echo_ignore_all">
+				<spinnerItem name="On" value="1"/>
+				<spinnerItem name="Off" value="0"/>
+			</spinner>
+			<seekBar description="The tcp_max_syn_backlog variable tells your box how many SYN requests to keep in memory. (Samsung Default: 512)(Kuban Default: 4096)" name="TCP Max SYN Backlog" action="generic /proc/sys/net/ipv4/tcp_max_syn_backlog" unit="" min="128" reversed="false" step="128" max="4096"/>
+		</settingsPane>
+	</settingsTab>
+	<settingsTab name="Misc">
+		<settingsPane description="Screen Settings" name="Screen Settings">
+			<seekBar description="Touch Sensitivity Lower value = higher sensitivity (Samsung Default: 40)(Kuban Default: 0)" name="Touch Sensitivity" action="generic /sys/devices/virtual/sec/sec_touchscreen/tsp_threshold" unit="" min="0" reversed="false" step="10" max="80"/>
+			<seekBar description="Wifi Scan Interval (Samsung Default: 15)(Kuban Default: 180)" name="Wifi Scan Interval" action="supplicant_scan_interval" unit="" min="0" reversed="false" step="10" max="500"/>
+		</settingsPane>
+	</settingsTab>
 </settingsRoot>

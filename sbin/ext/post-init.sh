@@ -14,8 +14,6 @@ then
   echo ${ccxmlsum} > /data/.kuban/.ccxmlsum
 fi
 [ ! -f /data/.kuban/default.profile ] && cp /res/customconfig/default.profile /data/.kuban
-[ ! -f /data/.kuban/battery.profile ] && cp /res/customconfig/battery.profile /data/.kuban
-[ ! -f /data/.kuban/performance.profile ] && cp /res/customconfig/performance.profile /data/.kuban
 
 . /res/customconfig/customconfig-helper
 read_defaults

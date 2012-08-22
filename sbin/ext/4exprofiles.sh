@@ -21,12 +21,14 @@ do
 					echo $scaling_governor_batt > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 					echo $scaling_max_freq_batt > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
 					echo $scaling_min_freq_batt > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+					echo $scheduler > /sys/block/mmcblk0/queue/scheduler
 				fi
 				if [ $BATTERY_LEVEL -gt $lowbatt ];
 				then
 					echo $scaling_governor > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 					echo $scaling_max_freq > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
 					echo $scaling_min_freq > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+					echo $scheduler > /sys/block/mmcblk0/queue/scheduler
 				fi
 			fi
 			if [ $CHARCHING = Charging ];
@@ -36,12 +38,14 @@ do
 					echo $scaling_governor_charging > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 					echo $scaling_max_freq_charging > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
 					echo $scaling_min_freq_charging > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+					echo $scheduler > /sys/block/mmcblk0/queue/scheduler
 				fi
 				if [ $BATTERY_LEVEL -gt $lowbatt ];
 				then
 					echo $scaling_governor_charging > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 					echo $scaling_max_freq_charging > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
 					echo $scaling_min_freq_charging > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+					echo $scheduler > /sys/block/mmcblk0/queue/scheduler
 				fi
 			fi
 		fi
@@ -66,12 +70,14 @@ do
 					echo $scaling_governor_sleep > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 					echo $scaling_max_freq_sleep > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
 					echo $scaling_min_freq_sleep > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+					echo $scheduleroff > /sys/block/mmcblk0/queue/scheduler
 				fi
 				if [ $BATTERY_LEVEL -gt $lowbatt ];
 				then
 					echo $scaling_governor_sleep > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 					echo $scaling_max_freq_sleep > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
 					echo $scaling_min_freq_sleep > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+					echo $scheduleroff > /sys/block/mmcblk0/queue/scheduler
 				fi
 			fi
 			if [ $CHARCHING = Charging ];
@@ -81,12 +87,14 @@ do
 					echo $scaling_governor_sleep > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 					echo $scaling_max_freq_sleep > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
 					echo $scaling_min_freq_sleep > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+					echo $scheduleroff > /sys/block/mmcblk0/queue/scheduler
 				fi
 				if [ $BATTERY_LEVEL -gt $lowbatt ];
 				then
 					echo $scaling_governor_sleep > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 					echo $scaling_max_freq_sleep > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
 					echo $scaling_min_freq_sleep > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+					echo $scheduleroff > /sys/block/mmcblk0/queue/scheduler
 				fi
 			fi
 		fi

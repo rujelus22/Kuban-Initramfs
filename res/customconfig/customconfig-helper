@@ -2,8 +2,6 @@
 # custom script helper by Gokhan Moral
 
 DEFAULT_PROFILE=/res/customconfig/default.profile
-BATTERY_PROFILE=/res/customconfig/battery.profile
-PERFORMANCE_PROFILE=/res/customconfig/performance.profile
 CONFIG_XML=/res/customconfig/customconfig.xml
 PROFILE_PATH=/data/.kuban
 TEMP_CONFIG=$PROFILE_PATH/.config.tmp
@@ -47,8 +45,6 @@ select_profile()
     _ACTIVE_PROFILE=`cat $ACTIVE_PROFILE`
     if [ ! -f ${PROFILE_PATH}/${_ACTIVE_PROFILE}.profile ];then
       cp $DEFAULT_PROFILE ${PROFILE_PATH}/${1}.profile
-      [ "$_ACTIVE_PROFILE" == "battery" ] && cp $BATTERY_PROFILE ${PROFILE_PATH}/${1}.profile
-      [ "$_ACTIVE_PROFILE" == "performance" ] && cp $PERFORMANCE_PROFILE ${PROFILE_PATH}/${1}.profile
     fi
     if [ ! -f ${PROFILE_PATH}/${1}.profile ];then
       cp ${PROFILE_PATH}/${_ACTIVE_PROFILE}.profile ${PROFILE_PATH}/${1}.profile
@@ -117,8 +113,6 @@ read_defaults ()
 {
   read_config "$DEFAULT_PROFILE"
   _ACTIVE_PROFILE=`cat $ACTIVE_PROFILE`
-  [ "$_ACTIVE_PROFILE" == "battery" ] && read_config "$BATTERY_PROFILE"
-  [ "$_ACTIVE_PROFILE" == "performance" ] && read_config "$PERFORMANCE_PROFILE"
 }
 
 # some initialization code
@@ -129,10 +123,4 @@ fi
 
 if [ ! -f $PROFILE_PATH/default.profile ];then
   cp $DEFAULT_PROFILE $PROFILE_PATH/default.profile
-fi
-if [ ! -f $PROFILE_PATH/battery.profile ];then
-  cp $BATTERY_PROFILE $PROFILE_PATH/battery.profile
-fi
-if [ ! -f $PROFILE_PATH/performance.profile ];then
-  cp $PERFORMANCE_PROFILE $PROFILE_PATH/performance.profile
 fi

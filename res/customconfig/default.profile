@@ -28,6 +28,7 @@ scaling_max_freq_charging=1200000
 scaling_min_freq_charging=200000
 enable_mask=3
 scheduler=sio
+scheduleroff=sio
 usb_mode=default
 vfs_cache_pressure=10
 dirty_background_ratio=5
