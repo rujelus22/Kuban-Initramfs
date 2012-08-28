@@ -14,6 +14,7 @@ then
   echo ${ccxmlsum} > /data/.kuban/.ccxmlsum
 fi
 [ ! -f /data/.kuban/default.profile ] && cp /res/customconfig/default.profile /data/.kuban
+[ ! -f /data/.kuban/6gestures.sh ] && cp /res/customconfig/6gestures.sh /data/.kuban
 
 . /res/customconfig/customconfig-helper
 read_defaults
@@ -49,3 +50,6 @@ esac;
 
 #usb mode
 /res/customconfig/actions/usb-mode ${usb_mode}
+
+#start gesture support
+/data/.kuban/6gestures.sh
