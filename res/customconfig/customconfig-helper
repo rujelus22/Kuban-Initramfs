@@ -53,6 +53,11 @@ select_profile()
   fi
 }
 
+[ ! -f /data/.kuban/6gestures.sh ] && cp /res/customconfig/6gestures.sh /data/.kuban
+if [ /res/customconfig/6gestures.sh -nt /data/.kuban/6gestures.sh ]; then
+	cp /res/customconfig/6gestures.sh /data/.kuban
+fi
+
 delete_profile()
 {
   if [ "`cat $ACTIVE_PROFILE`" == "$1" ];then

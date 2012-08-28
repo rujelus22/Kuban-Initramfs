@@ -15,7 +15,6 @@ OFF_MODE ()
 	if [ $AWAKE = "awake" ];
 	then
 		CPU_SECONDCORE_ON
-		BOOST_WAKEUP
 		SCREEN_ON_VM
 		GESTURES_ON
 		ON_BATT_HELPER
@@ -173,11 +172,11 @@ SCREEN_OFF_CHARGING_LOWBATT ()
 {
 #Screen Off - Charging - Low Batt - Screen On
 	BATTERY_LEVEL=`cat /sys/class/power_supply/battery/capacity`
-	CHARCHING=`cat /sys/class/power_supply/battery/status`
 	source "/data/.kuban/default.profile"
 	AWAKE=`cat /sys/power/wait_for_fb_wake`
 	if [ $AWAKE = "awake" ]; 
 	then
+	CHARCHING=`cat /sys/class/power_supply/battery/status`
 		if [ $CHARCHING = Discharging ];
 		then
 			if [ $BATTERY_LEVEL -le $lowbatt ];
@@ -233,11 +232,11 @@ SCREEN_OFF_LOWBATT_CHARGING ()
 {
 #Screen Off - Low Batt - Charging - Screen On
 	BATTERY_LEVEL=`cat /sys/class/power_supply/battery/capacity`
-	CHARCHING=`cat /sys/class/power_supply/battery/status`
 	source "/data/.kuban/default.profile"
 	AWAKE=`cat /sys/power/wait_for_fb_wake`
 	if [ $AWAKE = "awake" ]; 
 	then
+	CHARCHING=`cat /sys/class/power_supply/battery/status`
 		if [ $CHARCHING = Discharging ];
 		then
 			if [ $BATTERY_LEVEL -le $lowbatt ];
@@ -307,11 +306,11 @@ CHARGING_LOWBATT_SCREEN_OFF ()
 {
 #Charging - Low Batt - Screen Off - Screen On
 	BATTERY_LEVEL=`cat /sys/class/power_supply/battery/capacity`
-	CHARCHING=`cat /sys/class/power_supply/battery/status`
 	source "/data/.kuban/default.profile"
 	AWAKE=`cat /sys/power/wait_for_fb_wake`
 	if [ $AWAKE = "awake" ]; 
 	then
+	CHARCHING=`cat /sys/class/power_supply/battery/status`
 		if [ $CHARCHING = Discharging ];
 		then
 			if [ $BATTERY_LEVEL -le $lowbatt ];
@@ -353,6 +352,7 @@ CHARGING_LOWBATT_SCREEN_OFF ()
 	SLEEPING=`cat /sys/power/wait_for_fb_sleep`
 	if [ $SLEEPING = "sleeping" ]; 
 	then
+	CHARCHING=`cat /sys/class/power_supply/battery/status`
 		if [ $CHARCHING = Discharging ];
 		then
 			if [ $BATTERY_LEVEL -le $lowbatt ];
@@ -391,11 +391,11 @@ CHARGING_SCREEN_OFF_LOWBATT ()
 {
 #Charging - Screen Off - Low Batt - Screen On
 	BATTERY_LEVEL=`cat /sys/class/power_supply/battery/capacity`
-	CHARCHING=`cat /sys/class/power_supply/battery/status`
 	source "/data/.kuban/default.profile"
 	AWAKE=`cat /sys/power/wait_for_fb_wake`
 	if [ $AWAKE = "awake" ]; 
 	then
+	CHARCHING=`cat /sys/class/power_supply/battery/status`
 		if [ $CHARCHING = Discharging ];
 		then
 			if [ $BATTERY_LEVEL -le $lowbatt ];
@@ -437,6 +437,7 @@ CHARGING_SCREEN_OFF_LOWBATT ()
 	SLEEPING=`cat /sys/power/wait_for_fb_sleep`
 	if [ $SLEEPING = "sleeping" ]; 
 	then
+	CHARCHING=`cat /sys/class/power_supply/battery/status`
 		if [ $CHARCHING = Discharging ];
 		then
 			SIO_SCREEN_OFF
@@ -463,11 +464,11 @@ LOWBATT_CHARGING_SCREEN_OFF ()
 {
 #Low Batt - Charging - Screen Off - Screen On
 	BATTERY_LEVEL=`cat /sys/class/power_supply/battery/capacity`
-	CHARCHING=`cat /sys/class/power_supply/battery/status`
 	source "/data/.kuban/default.profile"
 	AWAKE=`cat /sys/power/wait_for_fb_wake`
 	if [ $AWAKE = "awake" ]; 
 	then
+	CHARCHING=`cat /sys/class/power_supply/battery/status`
 		if [ $CHARCHING = Discharging ];
 		then
 			if [ $BATTERY_LEVEL -le $lowbatt ];
@@ -523,6 +524,7 @@ LOWBATT_CHARGING_SCREEN_OFF ()
 	SLEEPING=`cat /sys/power/wait_for_fb_sleep`
 	if [ $SLEEPING = "sleeping" ]; 
 	then
+	CHARCHING=`cat /sys/class/power_supply/battery/status`
 		if [ $CHARCHING = Discharging ];
 		then
 			if [ $BATTERY_LEVEL -le $lowbatt ];
@@ -573,11 +575,11 @@ LOWBATT_SCREEN_OFF_CHARGING ()
 {
 #Low Batt - Screen Off - Charging - Screen On
 	BATTERY_LEVEL=`cat /sys/class/power_supply/battery/capacity`
-	CHARCHING=`cat /sys/class/power_supply/battery/status`
 	source "/data/.kuban/default.profile"
 	AWAKE=`cat /sys/power/wait_for_fb_wake`
 	if [ $AWAKE = "awake" ]; 
 	then
+	CHARCHING=`cat /sys/class/power_supply/battery/status`
 		if [ $CHARCHING = Discharging ];
 		then
 			if [ $BATTERY_LEVEL -le $lowbatt ];
