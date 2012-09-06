@@ -1,0 +1,20 @@
+#!/sbin/busybox sh
+
+if [ "a$2" != "a" ];then
+  scenario=$2
+fi
+
+case "${scenario}" in
+  0)
+	chmod 666 /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/scenario
+	echo 0 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/scenario
+	sed -i 's/scenario=.*/scenario=$2/g' /data/.kuban/default.profile
+    ;;
+  2)
+	chmod 666 /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/scenario
+	echo 2 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/scenario
+	sed -i 's/scenario=.*/scenario=$2/g' /data/.kuban/default.profile
+    ;;
+esac;
+
+echo $scenario

@@ -1,9 +1,4 @@
 #!/sbin/busybox sh
-# Logging
-#/sbin/busybox cp /data/user.log /data/user.log.bak
-#/sbin/busybox rm /data/user.log
-#exec >>/data/user.log
-#exec 2>&1
 
 mkdir /data/.kuban
 chmod 777 /data/.kuban
@@ -16,7 +11,8 @@ fi
 [ ! -f /data/.kuban/default.profile ] && cp /res/customconfig/default.profile /data/.kuban
 [ ! -f /data/.kuban/6gestures.sh ] && cp /res/customconfig/6gestures.sh /data/.kuban
 if [ /res/customconfig/6gestures.sh -nt /data/.kuban/6gestures.sh ]; then
-	cp /res/customconfig/6gestures.sh /data/.kuban
+	rm /data/.kuban/6gestures.sh
+ 	cp /res/customconfig/6gestures.sh /data/.kuban
 fi
 
 . /res/customconfig/customconfig-helper
@@ -47,6 +43,9 @@ case "${cpustepcount}" in
     echo 1600 1500 1400 1300 1200 1100 1000 900 800 700 600 500 400 300 200 100 50 25 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
     ;;
 esac;
+
+# Set color mode to user mode
+echo 1 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/user_mode
 
 # apply ExTweaks defaults
 /res/uci.sh apply

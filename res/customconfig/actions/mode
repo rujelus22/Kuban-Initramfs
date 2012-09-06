@@ -1,0 +1,30 @@
+#!/sbin/busybox sh
+
+if [ "a$2" != "a" ];then
+  mode=$2
+fi
+
+case "${mode}" in
+  0)
+	chmod 666 /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/mode
+	echo 0 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/mode
+	sed -i 's/mode=.*/mode=$2/g' /data/.kuban/default.profile
+    ;;
+  1)
+	chmod 666 /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/mode
+	echo 1 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/mode
+	sed -i 's/mode=.*/mode=$2/g' /data/.kuban/default.profile
+    ;;
+  2)
+	chmod 666 /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/mode
+	echo 2 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/mode
+	sed -i 's/mode=.*/mode=$2/g' /data/.kuban/default.profile
+    ;;
+  3)
+	chmod 666 /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/mode
+	echo 3 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/mode
+	sed -i 's/mode=.*/mode=$2/g' /data/.kuban/default.profile
+    ;;
+esac;
+
+echo $mode

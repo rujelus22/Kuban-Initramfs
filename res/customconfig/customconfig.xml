@@ -9,6 +9,7 @@
 				<spinnerItem name="HotPlug" value="hotplug"/> 
 				<spinnerItem name="Scary" value="Scary"/> 
 				<spinnerItem name="Lulzactive" value="lulzactive"/> 
+				<spinnerItem name="Lulzactiveq" value="lulzactiveq"/> 
 				<spinnerItem name="Skywalker" value="skywalker"/> 
 				<spinnerItem name="Brazilianwax" value="brazilianwax"/> 
 				<spinnerItem name="SavagedZen" value="SavagedZen"/> 
@@ -165,6 +166,7 @@
 				<spinnerItem name="HotPlug" value="hotplug"/>
 				<spinnerItem name="Scary" value="Scary"/>
 				<spinnerItem name="Lulzactive" value="lulzactive"/>
+				<spinnerItem name="Lulzactiveq" value="lulzactiveq"/>
 				<spinnerItem name="Skywalker" value="skywalker"/>
 				<spinnerItem name="Brazilianwax" value="brazilianwax"/>
 				<spinnerItem name="SavagedZen" value="SavagedZen"/>
@@ -248,6 +250,7 @@
 				<spinnerItem name="HotPlug" value="hotplug"/> 
 				<spinnerItem name="Scary" value="Scary"/> 
 				<spinnerItem name="Lulzactive" value="lulzactive"/> 
+				<spinnerItem name="Lulzactiveq" value="lulzactiveq"/>
 				<spinnerItem name="Skywalker" value="skywalker"/> 
 				<spinnerItem name="Brazilianwax" value="brazilianwax"/> 
 				<spinnerItem name="SavagedZen" value="SavagedZen"/> 
@@ -321,6 +324,7 @@
 				<spinnerItem name="HotPlug" value="hotplug"/> 
 				<spinnerItem name="Scary" value="Scary"/> 
 				<spinnerItem name="Lulzactive" value="lulzactive"/> 
+				<spinnerItem name="Lulzactiveq" value="lulzactiveq"/>
 				<spinnerItem name="Skywalker" value="skywalker"/> 
 				<spinnerItem name="Brazilianwax" value="brazilianwax"/> 
 				<spinnerItem name="SavagedZen" value="SavagedZen"/> 
@@ -506,6 +510,7 @@
 				<spinnerItem name="Off" value="0"/>
 			</spinner>
 			<spinner description="1 finger at the top left and one finger at the bottom left swipe both to the right" name="Gesture 1" action="gestures1">
+				<spinnerItem name="Off" value="off"/>
 				<spinnerItem name="Browser" value="app1"/>
 				<spinnerItem name="Calendar" value="app2"/>
 				<spinnerItem name="Camera" value="app3"/>
@@ -553,8 +558,11 @@
 				<spinnerItem name="Toggle Data" value="data"/>
 				<spinnerItem name="Toggle Wifi" value="wifi"/>
 				<spinnerItem name="Toggle 4G" value="wimax"/>
+				<spinnerItem name="Invert The Screen" value="invert"/>
+				<spinnerItem name="Outdoor Screen Mode" value="outdoor"/>
 			</spinner>
 			<spinner description="Draw a Z" name="Gesture 2" action="gestures2">
+				<spinnerItem name="Off" value="off"/>
 				<spinnerItem name="Browser" value="app1"/>
 				<spinnerItem name="Calendar" value="app2"/>
 				<spinnerItem name="Camera" value="app3"/>
@@ -602,8 +610,11 @@
 				<spinnerItem name="Toggle Data" value="data"/>
 				<spinnerItem name="Toggle Wifi" value="wifi"/>
 				<spinnerItem name="Toggle 4G" value="wimax"/>
+				<spinnerItem name="Invert The Screen" value="invert"/>
+				<spinnerItem name="Outdoor Screen Mode" value="outdoor"/>
 			</spinner>
 			<spinner description="1 finger on the top left one on the bottom left both go to the middle right" name="Gesture 3" action="gestures3">
+				<spinnerItem name="Off" value="off"/>
 				<spinnerItem name="Browser" value="app1"/>
 				<spinnerItem name="Calendar" value="app2"/>
 				<spinnerItem name="Camera" value="app3"/>
@@ -651,8 +662,11 @@
 				<spinnerItem name="Toggle Data" value="data"/>
 				<spinnerItem name="Toggle Wifi" value="wifi"/>
 				<spinnerItem name="Toggle 4G" value="wimax"/>
+				<spinnerItem name="Invert The Screen" value="invert"/>
+				<spinnerItem name="Outdoor Screen Mode" value="outdoor"/>
 			</spinner>
 			<spinner description="Draw a heart starting in the bottom middle of the screen" name="Gesture 4" action="gestures4">
+				<spinnerItem name="Off" value="off"/>
 				<spinnerItem name="Browser" value="app1"/>
 				<spinnerItem name="Calendar" value="app2"/>
 				<spinnerItem name="Camera" value="app3"/>
@@ -700,8 +714,11 @@
 				<spinnerItem name="Toggle Data" value="data"/>
 				<spinnerItem name="Toggle Wifi" value="wifi"/>
 				<spinnerItem name="Toggle 4G" value="wimax"/>
+				<spinnerItem name="Invert The Screen" value="invert"/>
+				<spinnerItem name="Outdoor Screen Mode" value="outdoor"/>
 			</spinner>
 			<spinner description="Draw a Traingle starting in the Top middle going Counterclockwise" name="Gesture 5" action="gestures5">
+				<spinnerItem name="Off" value="off"/>
 				<spinnerItem name="Browser" value="app1"/>
 				<spinnerItem name="Calendar" value="app2"/>
 				<spinnerItem name="Camera" value="app3"/>
@@ -749,8 +766,11 @@
 				<spinnerItem name="Toggle Data" value="data"/>
 				<spinnerItem name="Toggle Wifi" value="wifi"/>
 				<spinnerItem name="Toggle 4G" value="wimax"/>
+				<spinnerItem name="Invert The Screen" value="invert"/>
+				<spinnerItem name="Outdoor Screen Mode" value="outdoor"/>
 			</spinner>
 			<spinner description="Draw a Diamond starting in the Top middle going clockwise" name="Gesture 6" action="gestures6">
+				<spinnerItem name="Off" value="off"/>
 				<spinnerItem name="Browser" value="app1"/>
 				<spinnerItem name="Calendar" value="app2"/>
 				<spinnerItem name="Camera" value="app3"/>
@@ -798,8 +818,11 @@
 				<spinnerItem name="Toggle Data" value="data"/>
 				<spinnerItem name="Toggle Wifi" value="wifi"/>
 				<spinnerItem name="Toggle 4G" value="wimax"/>
+				<spinnerItem name="Invert The Screen" value="invert"/>
+				<spinnerItem name="Outdoor Screen Mode" value="outdoor"/>
 			</spinner>
 			<spinner description="Draw a \ starting in the Bottom right going to the Top left then back" name="Gesture 7" action="gestures7">
+				<spinnerItem name="Off" value="off"/>
 				<spinnerItem name="Browser" value="app1"/>
 				<spinnerItem name="Calendar" value="app2"/>
 				<spinnerItem name="Camera" value="app3"/>
@@ -847,8 +870,11 @@
 				<spinnerItem name="Toggle Data" value="data"/>
 				<spinnerItem name="Toggle Wifi" value="wifi"/>
 				<spinnerItem name="Toggle 4G" value="wimax"/>
+				<spinnerItem name="Invert The Screen" value="invert"/>
+				<spinnerItem name="Outdoor Screen Mode" value="outdoor"/>
 			</spinner>
 			<spinner description="Draw a \ starting in the Top left going to the Bottom right then back" name="Gesture 8" action="gestures8">
+				<spinnerItem name="Off" value="off"/>
 				<spinnerItem name="Browser" value="app1"/>
 				<spinnerItem name="Calendar" value="app2"/>
 				<spinnerItem name="Camera" value="app3"/>
@@ -896,8 +922,11 @@
 				<spinnerItem name="Toggle Data" value="data"/>
 				<spinnerItem name="Toggle Wifi" value="wifi"/>
 				<spinnerItem name="Toggle 4G" value="wimax"/>
+				<spinnerItem name="Invert The Screen" value="invert"/>
+				<spinnerItem name="Outdoor Screen Mode" value="outdoor"/>
 			</spinner>
 			<spinner description="1 finger from the bottom left to the bottom right back to the bottom left" name="Gesture 9" action="gestures9">
+				<spinnerItem name="Off" value="off"/>
 				<spinnerItem name="Browser" value="app1"/>
 				<spinnerItem name="Calendar" value="app2"/>
 				<spinnerItem name="Camera" value="app3"/>
@@ -945,8 +974,11 @@
 				<spinnerItem name="Toggle Data" value="data"/>
 				<spinnerItem name="Toggle Wifi" value="wifi"/>
 				<spinnerItem name="Toggle 4G" value="wimax"/>
+				<spinnerItem name="Invert The Screen" value="invert"/>
+				<spinnerItem name="Outdoor Screen Mode" value="outdoor"/>
 			</spinner>
 			<spinner description="1 finger from the Top left to the Top right back to the Top left" name="Gesture 10" action="gestures10">
+				<spinnerItem name="Off" value="off"/>
 				<spinnerItem name="Browser" value="app1"/>
 				<spinnerItem name="Calendar" value="app2"/>
 				<spinnerItem name="Camera" value="app3"/>
@@ -994,7 +1026,35 @@
 				<spinnerItem name="Toggle Data" value="data"/>
 				<spinnerItem name="Toggle Wifi" value="wifi"/>
 				<spinnerItem name="Toggle 4G" value="wimax"/>
+				<spinnerItem name="Invert The Screen" value="invert"/>
+				<spinnerItem name="Outdoor Screen Mode" value="outdoor"/>
 			</spinner>
+		</settingsPane>
+	</settingsTab>
+	<settingsTab name="Screen">
+		<settingsPane description="Presets." name="Preset Mode">
+			<spinner description="Outdoor Mode" name="Outdoor Mode" action="outdoor_mode">
+				<spinnerItem name="Off" value="Off"/> 
+				<spinnerItem name="On" value="On"/>
+			</spinner>
+			<spinner description="Invert Screen" name="Invert Screen" action="invert_mode">
+				<spinnerItem name="Off" value="Off"/> 
+				<spinnerItem name="On" value="On"/>
+			</spinner>
+		</settingsPane>
+		<settingsPane description="Settings for screen colors." name="Screen Color Menu">
+			<spinner description="Scenario" name="Scenario" action="scenario">
+				<spinnerItem name="Off" value="0" />
+				<spinnerItem name="User Mode" value="2" />
+			</spinner>
+			<spinner description="Mode" name="Mode" action="mode">
+				<spinnerItem name="DYNAMIC" value="0" />
+				<spinnerItem name="STANDARD" value="1" />
+				<spinnerItem name="NATURAL" value="2" />
+				<spinnerItem name="MOVIE" value="3" />
+			</spinner>
+			<seekBar description="Sets screen BLUE color scale (Kuban Default: 128)" name="Blue Color Scale" action="generic /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/user_cb" unit="BLUE" min="0" reversed="false" step="1" max="244"/>
+			<seekBar description="Sets screen RED color scale (Kuban Default: 128)" name="Red Color Scale" action="generic /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/user_cr" unit="RED" min="0" reversed="false" step="1" max="244"/>
 		</settingsPane>
 	</settingsTab>
 	<settingsTab name="Misc">

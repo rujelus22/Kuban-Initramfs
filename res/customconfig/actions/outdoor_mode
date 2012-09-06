@@ -1,0 +1,18 @@
+#!/sbin/busybox sh
+
+if [ "a$2" != "a" ];then
+  outdoor_mode=$2
+fi
+
+case "${outdoor_mode}" in
+  On)
+	echo 1 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/outdoor
+	sed -i 's/outdoor_mode=.*/outdoor_mode=$2/g' /data/.kuban/default.profile
+    ;;
+  Off)
+	echo 0 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/outdoor
+	sed -i 's/outdoor_mode=.*/outdoor_mode=$2/g' /data/.kuban/default.profile
+    ;;
+esac;
+
+echo $outdoor_mode

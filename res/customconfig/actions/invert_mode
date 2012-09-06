@@ -1,0 +1,18 @@
+#!/sbin/busybox sh
+
+if [ "a$2" != "a" ];then
+  invert_mode=$2
+fi
+
+case "${invert_mode}" in
+  On)
+	echo 1 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/negative
+	sed -i 's/invert_mode=.*/invert_mode=$2/g' /data/.kuban/default.profile
+    ;;
+  Off)
+	echo 0 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/negative
+	sed -i 's/invert_mode=.*/invert_mode=$2/g' /data/.kuban/default.profile
+    ;;
+esac;
+
+echo $invert_mode

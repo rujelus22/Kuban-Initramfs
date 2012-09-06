@@ -81,13 +81,42 @@ if [ $screengestures = 1 ]; then
 		app8="com.google.android.talk/.BuddyListCombo"
 		app9="com.darekxan.extweaks.app/.ExTweaksActivity"
 		app10="wimax"
+		ges1="on"
+		ges2="on"
+		ges3="on"
+		ges4="on"
+		ges5="on"
+		ges6="on"
+		ges7="on"
+		ges8="on"
+		ges9="on"
+		ges10="on"
 	
 		if [ "$Gesture" == "1" ]; then
+			if [ $ges1 = "on" ]; then
 			service call vibrator 2 i32 100 i32 0
 			if [ $app1 = recent ]; then
 				input keyevent 187
 			elif [ $app1 = "music" ]; then
 				input keyevent 85
+			elif [ $app1 = "outdoor" ]; then
+				CURRENT_MODE=`cat /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/outdoor`
+				if [ $CURRENT_MODE = 0 ]; then
+					echo 1 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/outdoor
+					sed -i 's/outdoor_mode=.*/outdoor_mode=$2/g' /data/.kuban/default.profile
+				else
+					echo 0 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/outdoor
+					sed -i 's/outdoor_mode=.*/outdoor_mode=$2/g' /data/.kuban/default.profile
+				fi
+			elif [ $app1 = "invert" ]; then
+				CURRENT_INVERT_MODE=`cat /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/negative`
+				if [ $CURRENT_INVERT_MODE = 0 ]; then
+					echo 1 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/negative
+					sed -i 's/invert_mode=.*/invert_mode=1/g' /data/.kuban/default.profile
+				else
+					echo 0 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/negative
+					sed -i 's/invert_mode=.*/invert_mode=0/g' /data/.kuban/default.profile
+				fi
 			elif [ $app1 = "switchapp" ]; then
 				previous_task=`dumpsys activity a | grep "Recent #1" | grep -o -E "#[0-9]+ " | cut -c2-`
 				service call activity 24 i32 $previous_task i32 2
@@ -122,12 +151,33 @@ if [ $screengestures = 1 ]; then
 			else
 				am start $app1
 			fi
+			fi
+			: #do nothing
 		elif [ "$Gesture" == "2" ]; then
+			if [ $ges2 = "on" ]; then
 			service call vibrator 2 i32 100 i32 0
 			if [ $app2 = recent ]; then
 				input keyevent 187
 			elif [ $app2 = "music" ]; then
 				input keyevent 85
+			elif [ $app2 = "outdoor" ]; then
+				CURRENT_MODE=`cat /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/outdoor`
+				if [ $CURRENT_MODE = 0 ]; then
+					echo 1 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/outdoor
+					sed -i 's/outdoor_mode=.*/outdoor_mode=$2/g' /data/.kuban/default.profile
+				else
+					echo 0 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/outdoor
+					sed -i 's/outdoor_mode=.*/outdoor_mode=$2/g' /data/.kuban/default.profile
+				fi
+			elif [ $app2 = "invert" ]; then
+				CURRENT_INVERT_MODE=`cat /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/negative`
+				if [ $CURRENT_INVERT_MODE = 0 ]; then
+					echo 1 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/negative
+					sed -i 's/invert_mode=.*/invert_mode=1/g' /data/.kuban/default.profile
+				else
+					echo 0 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/negative
+					sed -i 's/invert_mode=.*/invert_mode=0/g' /data/.kuban/default.profile
+				fi
 			elif [ $app2 = "switchapp" ]; then
 				previous_task=`dumpsys activity a | grep "Recent #1" | grep -o -E "#[0-9]+ " | cut -c2-`
 				service call activity 24 i32 $previous_task i32 2
@@ -162,12 +212,33 @@ if [ $screengestures = 1 ]; then
 			else
 				am start $app2
 			fi
+			fi
+			: #do nothing
 		elif [ "$Gesture" == "3" ]; then
+			if [ $ges3 = "on" ]; then
 			service call vibrator 2 i32 100 i32 0
 			if [ $app3 = recent ]; then
 				input keyevent 187
 			elif [ $app3 = "music" ]; then
 				input keyevent 85
+			elif [ $app3 = "outdoor" ]; then
+				CURRENT_MODE=`cat /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/outdoor`
+				if [ $CURRENT_MODE = 0 ]; then
+					echo 1 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/outdoor
+					sed -i 's/outdoor_mode=.*/outdoor_mode=$2/g' /data/.kuban/default.profile
+				else
+					echo 0 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/outdoor
+					sed -i 's/outdoor_mode=.*/outdoor_mode=$2/g' /data/.kuban/default.profile
+				fi
+			elif [ $app3 = "invert" ]; then
+				CURRENT_INVERT_MODE=`cat /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/negative`
+				if [ $CURRENT_INVERT_MODE = 0 ]; then
+					echo 1 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/negative
+					sed -i 's/invert_mode=.*/invert_mode=1/g' /data/.kuban/default.profile
+				else
+					echo 0 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/negative
+					sed -i 's/invert_mode=.*/invert_mode=0/g' /data/.kuban/default.profile
+				fi
 			elif [ $app3 = "switchapp" ]; then
 				previous_task=`dumpsys activity a | grep "Recent #1" | grep -o -E "#[0-9]+ " | cut -c2-`
 				service call activity 24 i32 $previous_task i32 2
@@ -202,12 +273,33 @@ if [ $screengestures = 1 ]; then
 			else
 				am start $app3
 			fi
+			fi
+			: #do nothing
 		elif [ "$Gesture" == "4" ]; then
+			if [ $ges4 = "on" ]; then
 			service call vibrator 2 i32 100 i32 0
 			if [ $app4 = recent ]; then
 				input keyevent 187
 			elif [ $app4 = "music" ]; then
 				input keyevent 85
+			elif [ $app4 = "outdoor" ]; then
+				CURRENT_MODE=`cat /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/outdoor`
+				if [ $CURRENT_MODE = 0 ]; then
+					echo 1 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/outdoor
+					sed -i 's/outdoor_mode=.*/outdoor_mode=$2/g' /data/.kuban/default.profile
+				else
+					echo 0 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/outdoor
+					sed -i 's/outdoor_mode=.*/outdoor_mode=$2/g' /data/.kuban/default.profile
+				fi
+			elif [ $app4 = "invert" ]; then
+				CURRENT_INVERT_MODE=`cat /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/negative`
+				if [ $CURRENT_INVERT_MODE = 0 ]; then
+					echo 1 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/negative
+					sed -i 's/invert_mode=.*/invert_mode=1/g' /data/.kuban/default.profile
+				else
+					echo 0 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/negative
+					sed -i 's/invert_mode=.*/invert_mode=0/g' /data/.kuban/default.profile
+				fi
 			elif [ $app4 = "switchapp" ]; then
 				previous_task=`dumpsys activity a | grep "Recent #1" | grep -o -E "#[0-9]+ " | cut -c2-`
 				service call activity 24 i32 $previous_task i32 2
@@ -242,12 +334,33 @@ if [ $screengestures = 1 ]; then
 			else
 				am start $app4
 			fi
+			fi
+			: #do nothing
 		elif [ "$Gesture" == "5" ]; then
+			if [ $ges5 = "on" ]; then
 			service call vibrator 2 i32 100 i32 0
 			if [ $app5 = recent ]; then
 				input keyevent 187
 			elif [ $app5 = "music" ]; then
 				input keyevent 85
+			elif [ $app5 = "outdoor" ]; then
+				CURRENT_MODE=`cat /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/outdoor`
+				if [ $CURRENT_MODE = 0 ]; then
+					echo 1 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/outdoor
+					sed -i 's/outdoor_mode=.*/outdoor_mode=$2/g' /data/.kuban/default.profile
+				else
+					echo 0 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/outdoor
+					sed -i 's/outdoor_mode=.*/outdoor_mode=$2/g' /data/.kuban/default.profile
+				fi
+			elif [ $app5 = "invert" ]; then
+				CURRENT_INVERT_MODE=`cat /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/negative`
+				if [ $CURRENT_INVERT_MODE = 0 ]; then
+					echo 1 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/negative
+					sed -i 's/invert_mode=.*/invert_mode=1/g' /data/.kuban/default.profile
+				else
+					echo 0 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/negative
+					sed -i 's/invert_mode=.*/invert_mode=0/g' /data/.kuban/default.profile
+				fi
 			elif [ $app5 = "switchapp" ]; then
 				previous_task=`dumpsys activity a | grep "Recent #1" | grep -o -E "#[0-9]+ " | cut -c2-`
 				service call activity 24 i32 $previous_task i32 2
@@ -282,12 +395,33 @@ if [ $screengestures = 1 ]; then
 			else
 				am start $app5
 			fi	
+			fi
+			: #do nothing
 		elif [ "$Gesture" == "6" ]; then
+			if [ $ges6 = "on" ]; then
 			service call vibrator 2 i32 100 i32 0
 			if [ $app6 = recent ]; then
 				input keyevent 187
 			elif [ $app6 = "music" ]; then
 				input keyevent 85
+			elif [ $app6 = "outdoor" ]; then
+				CURRENT_MODE=`cat /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/outdoor`
+				if [ $CURRENT_MODE = 0 ]; then
+					echo 1 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/outdoor
+					sed -i 's/outdoor_mode=.*/outdoor_mode=$2/g' /data/.kuban/default.profile
+				else
+					echo 0 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/outdoor
+					sed -i 's/outdoor_mode=.*/outdoor_mode=$2/g' /data/.kuban/default.profile
+				fi
+			elif [ $app6 = "invert" ]; then
+				CURRENT_INVERT_MODE=`cat /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/negative`
+				if [ $CURRENT_INVERT_MODE = 0 ]; then
+					echo 1 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/negative
+					sed -i 's/invert_mode=.*/invert_mode=1/g' /data/.kuban/default.profile
+				else
+					echo 0 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/negative
+					sed -i 's/invert_mode=.*/invert_mode=0/g' /data/.kuban/default.profile
+				fi
 			elif [ $app6 = "switchapp" ]; then
 				previous_task=`dumpsys activity a | grep "Recent #1" | grep -o -E "#[0-9]+ " | cut -c2-`
 				service call activity 24 i32 $previous_task i32 2
@@ -322,12 +456,33 @@ if [ $screengestures = 1 ]; then
 			else
 				am start $app6
 			fi
+			fi
+			: #do nothing
 		elif [ "$Gesture" == "7" ]; then
+			if [ $ges7 = "on" ]; then
 			service call vibrator 2 i32 100 i32 0
 			if [ $app7 = recent ]; then
 				input keyevent 187
 			elif [ $app7 = "music" ]; then
 				input keyevent 85
+			elif [ $app7 = "outdoor" ]; then
+				CURRENT_MODE=`cat /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/outdoor`
+				if [ $CURRENT_MODE = 0 ]; then
+					echo 1 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/outdoor
+					sed -i 's/outdoor_mode=.*/outdoor_mode=$2/g' /data/.kuban/default.profile
+				else
+					echo 0 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/outdoor
+					sed -i 's/outdoor_mode=.*/outdoor_mode=$2/g' /data/.kuban/default.profile
+				fi
+			elif [ $app7 = "invert" ]; then
+				CURRENT_INVERT_MODE=`cat /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/negative`
+				if [ $CURRENT_INVERT_MODE = 0 ]; then
+					echo 1 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/negative
+					sed -i 's/invert_mode=.*/invert_mode=1/g' /data/.kuban/default.profile
+				else
+					echo 0 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/negative
+					sed -i 's/invert_mode=.*/invert_mode=0/g' /data/.kuban/default.profile
+				fi
 			elif [ $app7 = "switchapp" ]; then
 				previous_task=`dumpsys activity a | grep "Recent #1" | grep -o -E "#[0-9]+ " | cut -c2-`
 				service call activity 24 i32 $previous_task i32 2
@@ -362,12 +517,33 @@ if [ $screengestures = 1 ]; then
 			else
 				am start $app7
 			fi
+			fi
+			: #do nothing
 		elif [ "$Gesture" == "8" ]; then
+			if [ $ges8 = "on" ]; then
 			service call vibrator 2 i32 100 i32 0
 			if [ $app8 = recent ]; then
 				input keyevent 187
 			elif [ $app8 = "music" ]; then
 				input keyevent 85
+			elif [ $app8 = "outdoor" ]; then
+				CURRENT_MODE=`cat /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/outdoor`
+				if [ $CURRENT_MODE = 0 ]; then
+					echo 1 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/outdoor
+					sed -i 's/outdoor_mode=.*/outdoor_mode=$2/g' /data/.kuban/default.profile
+				else
+					echo 0 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/outdoor
+					sed -i 's/outdoor_mode=.*/outdoor_mode=$2/g' /data/.kuban/default.profile
+				fi
+			elif [ $app8 = "invert" ]; then
+				CURRENT_INVERT_MODE=`cat /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/negative`
+				if [ $CURRENT_INVERT_MODE = 0 ]; then
+					echo 1 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/negative
+					sed -i 's/invert_mode=.*/invert_mode=1/g' /data/.kuban/default.profile
+				else
+					echo 0 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/negative
+					sed -i 's/invert_mode=.*/invert_mode=0/g' /data/.kuban/default.profile
+				fi
 			elif [ $app8 = "switchapp" ]; then
 				previous_task=`dumpsys activity a | grep "Recent #1" | grep -o -E "#[0-9]+ " | cut -c2-`
 				service call activity 24 i32 $previous_task i32 2
@@ -402,12 +578,33 @@ if [ $screengestures = 1 ]; then
 			else
 				am start $app8
 			fi	
+			fi
+			: #do nothing
 		elif [ "$Gesture" == "9" ]; then
+			if [ $ges9 = "on" ]; then
 			service call vibrator 2 i32 100 i32 0
 			if [ $app9 = recent ]; then
 				input keyevent 187
 			elif [ $app9 = "music" ]; then
 				input keyevent 85
+			elif [ $app9 = "outdoor" ]; then
+				CURRENT_MODE=`cat /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/outdoor`
+				if [ $CURRENT_MODE = 0 ]; then
+					echo 1 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/outdoor
+					sed -i 's/outdoor_mode=.*/outdoor_mode=$2/g' /data/.kuban/default.profile
+				else
+					echo 0 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/outdoor
+					sed -i 's/outdoor_mode=.*/outdoor_mode=$2/g' /data/.kuban/default.profile
+				fi
+			elif [ $app9 = "invert" ]; then
+				CURRENT_INVERT_MODE=`cat /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/negative`
+				if [ $CURRENT_INVERT_MODE = 0 ]; then
+					echo 1 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/negative
+					sed -i 's/invert_mode=.*/invert_mode=1/g' /data/.kuban/default.profile
+				else
+					echo 0 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/negative
+					sed -i 's/invert_mode=.*/invert_mode=0/g' /data/.kuban/default.profile
+				fi
 			elif [ $app9 = "switchapp" ]; then
 				previous_task=`dumpsys activity a | grep "Recent #1" | grep -o -E "#[0-9]+ " | cut -c2-`
 				service call activity 24 i32 $previous_task i32 2
@@ -442,12 +639,33 @@ if [ $screengestures = 1 ]; then
 			else
 				am start $app9
 			fi	
+			fi
+			: #do nothing
 		elif [ "$Gesture" == "10" ]; then
+			if [ $ges10 = "on" ]; then
 			service call vibrator 2 i32 100 i32 0
 			if [ $app10 = recent ]; then
 				input keyevent 187
 			elif [ $app10 = "music" ]; then
 				input keyevent 85
+			elif [ $app10 = "outdoor" ]; then
+				CURRENT_MODE=`cat /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/outdoor`
+				if [ $CURRENT_MODE = 0 ]; then
+					echo 1 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/outdoor
+					sed -i 's/outdoor_mode=.*/outdoor_mode=$2/g' /data/.kuban/default.profile
+				else
+					echo 0 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/outdoor
+					sed -i 's/outdoor_mode=.*/outdoor_mode=$2/g' /data/.kuban/default.profile
+				fi
+			elif [ $app10 = "invert" ]; then
+				CURRENT_INVERT_MODE=`cat /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/negative`
+				if [ $CURRENT_INVERT_MODE = 0 ]; then
+					echo 1 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/negative
+					sed -i 's/invert_mode=.*/invert_mode=1/g' /data/.kuban/default.profile
+				else
+					echo 0 > /sys/devices/platform/samsung-pd.2/mdnie/mdnie/mdnie/negative
+					sed -i 's/invert_mode=.*/invert_mode=0/g' /data/.kuban/default.profile
+				fi
 			elif [ $app10 = "switchapp" ]; then
 				previous_task=`dumpsys activity a | grep "Recent #1" | grep -o -E "#[0-9]+ " | cut -c2-`
 				service call activity 24 i32 $previous_task i32 2
@@ -482,6 +700,8 @@ if [ $screengestures = 1 ]; then
 			else
 				am start $app10
 			fi
+		fi
+			: #do nothing
 		fi
 	done ) > /dev/null 2>&1 &
 fi
